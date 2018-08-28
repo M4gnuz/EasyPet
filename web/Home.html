@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css">
+         -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        crossorigin="anonymous">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        crossorigin="anonymous"></script>
+    <style>
+       
+
+      
+     button{
+         width: 250px;
+         margin-left: 85px;  
+         margin-top: 35px;
+         margin-bottom: 10px;
+         opacity: 0.9;
+         background-color:rgb(243, 223, 143);
+         color: darkblue;
+     }
+        .logoh{
+            width: 250px;
+            height: 250px;
+            
+            border-radius: 15%;
+           margin-left: 45px;
+           margin-top: 30px;       
+           
+            
+        }
+        #pl{
+            margin-left: 22%;
+            margin-right: 10px;
+            margin-top: 15px;  
+        }
+        #ep{
+            margin-top: 15px;  
+        }
+        
+
+        
+        #rod{
+            margin-left: 28%;
+            margin-top: 30%;
+            color: darkblue;
+        }
+
+        body {
+            /* background: url(constru.jpg) center center no-repeat fixed; */
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            
+        }
+
+        #banner{
+            margin-left: 20%;
+            
+        }
+        #principal{
+            margin-top: 30px;
+            background-color: #f5e8b6;
+            border-radius: 10%;
+           box-shadow: 0px 0px 2px 2px gainsboro;
+
+            height: 100%;        }
+        .logo{
+            text-align: center;
+            margin: 0 auto; 
+            width: 279px;
+           
+                
+        }
+        
+       
+        .logo h3{
+            width: 0px;
+            display: block;
+            float: left;
+        }
+        
+        .logo img{
+            width: 90px;
+           
+        }
+        nav {
+            background: rgb(243, 223, 143);
+            color: darkblue;
+            opacity: 0.6;
+            margin-bottom: 0%;
+        }
+        figcaption{
+            text-align: center;
+            background-color: darkblue;
+            color: azure;
+            border-radius: 35px;
+            margin-top: 15px;
+            width: 250px;
+            margin-left: 45px;
+            opacity: 0.7;
+
+        }
+        #nops{
+            background-color: white;
+            border-color: white;
+            color: white;
+        }
+        @media only screen and (max-width: 600px) {
+            #login {
+                margin-left: 0px;
+            }
+            .btn2 {
+                margin-left: 74%;
+            } 
+        }
+        
+        @media only screen and (max-width: 769px) {
+
+            .btn2 {
+                margin-left: 60%;
+            } 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg  border border-dar rounded shadow p-3 mb-5">
+      
+        <div id="home">
+
+                <h3 >Home</h3>
+        </div>
+       <div class="logo">      
+            <h3 >EasyPet</h3>
+            <img src="png_pata_de_cachorro_by_live4jbiebs-d5v4esy.png" width="88px">    
+       </div>
+        
+       <!-- <div id="loginhome">
+        <button type="button" id="entrarFornecedor" class=" btn2 btn "  onclick="window.location.href='Login.html';">Entrar</button>
+    </div> -->
+    </nav>
+    <div id="banner">
+
+        <img src="Banner2.jpg" width="80%" height="60%"> 
+
+    </div>
+
+
+    
+    <div class="container" id="principal">
+        <div class="row">
+        <div id="cpet" class="col-xs-4 col-sm-4 col-md-4" >
+            <img class="logoh" src="dogC5.jpg" >   
+            <figcaption>  Cuidados Para seu Pet </figcaption>
+            
+    
+        </div>
+
+        <div id="ppet" class="col-xs-4 col-sm-4 col-md-4">
+            <img class="logoh" src="dogC2.jpg" >
+            <figcaption>  Produtos para seu Pet</figcaption>
+    
+        </div>
+        <div id="apet" class="col-xs-4 col-sm-4 col-md-4">
+
+            <img class="logoh" src="dogC3.jpg" > 
+            <figcaption>  Aceesórios para seu Pet</figcaption>
+    
+        </div>
+    </div>  
+    <div class="row"> 
+        <div id="pl" class="" >
+
+            <img class="logoh" src="dogC.jpg" > 
+            <figcaption>  Plataforma completa para Logista</figcaption>
+    
+        </div>
+        <div id="ep" class="" >
+
+            <img class="logoh" src="dogC4.jpg" > 
+            <figcaption>  Entrega rápida e pratica</figcaption>
+    
+        </div>
+    
+
+
+    </div>  
+    </div>
+
+      <div class="container" id="rodape">
+          <div class="row"> 
+              
+          <div class=" col-xs-12 col-sm-4 col-md-4">
+              <h3 id="rod"> Sobre EasyPet</h3>
+              
+                 <button type="button"  id="quemsomos" class=" btn2 btn " >Quem Somos</button>
+                 
+          </div>
+          
+          <div class="col-xs-12 col-sm-4 col-md-4">
+                <h3 id="rod"> Donos do PetShop</h3>
+                <button type="button"  id="prerequisitos" class=" btn2 btn " > Pré-Requisitos</button>
+                
+         </div>
+         
+         <div class=" col-xs-12 col-sm-4 col-md-4">
+                <h3 id="rod"> Contato</h3>
+                <button type="button"  id="politicap" class=" btn2 btn " >Fale Conosco</button>
+                
+         </div>
+        </div>
+        <div class="row"> 
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                        
+                        <button type="button"  id="termos" class=" btn2 btn " >Termos de Condições e uso</button>
+                        
+                 </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                      <button type="button"  id="nops" class=" btn2 btn " >Cadastre-se</button>
+                      
+               </div>
+               <div class=" col-xs-12 col-sm-4 col-md-4">
+                      <button type="button"  id="trabalhe" class=" btn2 btn " >Trabalhe Conosco</button>
+                      
+               </div>
+              </div>
+              <div class="row"> 
+                    <div class=" col-xs-12 col-sm-4 col-md-4">
+                            
+                            <button type="button"  id="politicap" class=" btn2 btn " >Politica e Privacidade</button>
+                            
+                     </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                          <button type="button"  id="nops" class=" btn2 btn " ></button>
+                          
+                   </div>
+                   <div class=" col-xs-12 col-sm-4 col-md-4">
+                          <button type="button"  id="comopedir" class=" btn2 btn " >Como Pedir</button>
+                          
+                   </div>
+                  </div>
+      </div>      
+            
+
+
+</body>
+
+</html>

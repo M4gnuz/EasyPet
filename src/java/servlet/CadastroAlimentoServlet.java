@@ -16,6 +16,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,14 +63,19 @@ public class CadastroAlimentoServlet extends HttpServlet {
             alimento.setNome(request.getParameter("titulo"));
             alimento.setDescricao(request.getParameter("descricao"));
             alimento.setContraIndicacao(request.getParameter("contra"));
-            alimento.setNomeIngrediente("nome");
+            alimento.setNomeIngrediente(request.getParameter("nome"));
             alimento.setQtdIngrediente(Integer.parseInt(request.getParameter("qtd")));
             alimento.setPreco(valor);
             alimento.setEstoque(Integer.parseInt(request.getParameter("estoque")));
             alimento.setDtVencimento(request.getParameter("dataV"));
             alimento.setCategoria(request.getParameter("categoria"));
+            
+            int id = 0;
+            for (Cookie cookie : request.getCookies())
+            if (cookie.getName().equals("idFornecedor"))                
+                        id = Integer.parseInt(cookie.getValue());
 
-            AlimentoDAO.addAlimento(alimento);
+            AlimentoDAO.addAlimento(alimento, id);
         }
     }
 

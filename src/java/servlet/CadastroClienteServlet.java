@@ -84,6 +84,10 @@ public class CadastroClienteServlet extends HttpServlet {
             } else {
                 ClienteDAO.addCliente(cliente);
                 response.sendRedirect("index.html");
+                out.print("<script type=\'text/javascript\'>");
+                out.println("history.go(-1)");
+                out.println("alert('Cadastrado com Sucesso')");
+                out.print("</script>");
             }
 
             //VALIDANDO CADASTRO CLIENTE

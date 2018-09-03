@@ -50,13 +50,8 @@ public class LoginClienteServlet extends HttpServlet {
                     email = session.getAttribute("emailL").toString();
                     senha = session.getAttribute("senhaL").toString();
                 }
-            }
+            }         
             
-            if(novo.getEmail().equals(email) && novo.getSenha().equals(senha)){
-                session.setAttribute("emailL", email);
-                session.setAttribute("senhaL", senha);
-                out.println("<h1>Bem Vindo, "+email+"!</h1>");
-            }
 
             if (email.equals(novo.getEmail())) {
                 if (novo.getSenha().equals(senha)) {                   

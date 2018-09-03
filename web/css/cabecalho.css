@@ -1,0 +1,65 @@
+.btn-toolbar{
+    margin-right: 80px;
+    
+}
+
+#logocentral{
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+.logo {
+    text-align: center;
+    margin: 0 auto;
+    width: 279px;
+}
+
+.logo h3 {
+    width: 0px;
+    display: block;
+    float: left;
+}
+
+.logo img {
+    width: 90px;
+}
+
+
+
+nav {
+    background: rgb(243, 223, 143);
+    color: darkblue;
+    opacity: 0.8;
+   
+}
+
+#nav-principal .btn:not(:disabled):not(.disabled) {
+    color: white!important;
+    text-align: center;
+    
+}
+
+.btn-success {
+    background-color: darkblue!important;
+    border-color: #020238!important;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #030306!important;
+    border-color: #1e7e34;
+}
+#pesquisa{
+    margin-top: 8%;
+    margin-left: 28%;
+}
+#homeT{
+    margin-top: 10%;
+   margin-left: 20%;
+   color:#020238;
+}
+span{
+    margin-left: 13%;
+    color: #020238;;
+}
+

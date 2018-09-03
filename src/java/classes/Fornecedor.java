@@ -24,9 +24,9 @@ public class Fornecedor {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+    private int id;
     private String nome;
-    private long cnpj;
+    private String cnpj;
     private String razao;
     private String senha;
     private String endereco;
@@ -34,7 +34,7 @@ public class Fornecedor {
     private String bairro;
     private String cidade;
     private String complemento;
-    private int cep;
+    private String cep;
     private String dataAbertura;
     private String telefone;
     private String email;
@@ -56,14 +56,14 @@ public class Fornecedor {
     /**
      * @return the cnpj
      */
-    public long getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
     /**
      * @param cnpj the cnpj to set
      */
-    public void setCnpj(long cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
@@ -168,14 +168,14 @@ public class Fornecedor {
     /**
      * @return the cep
      */
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
     /**
      * @param cep the cep to set
      */
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
@@ -205,6 +205,20 @@ public class Fornecedor {
      */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
    
     

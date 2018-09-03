@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -38,20 +39,34 @@ public class LoginClienteServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-
+            HttpSession session = request.getSession();
+            
             String email = request.getParameter("emailL");
             String senha = request.getParameter("senhaL");
             Cliente novo = ClienteDAO.loginCliente(email, senha);
+            
+            if(novo.getEmail() == null || novo.getSenha() == null){
+                if(session.getAttribute("emailL") != null && session.getAttribute("senhaL") != null){
+                    email = session.getAttribute("emailL").toString();
+                    senha = session.getAttribute("senhaL").toString();
+                }
+            }
+            
+            if(novo.getEmail().equals(email) && novo.getSenha().equals(senha)){
+                session.setAttribute("emailL", email);
+                session.setAttribute("senhaL", senha);
+                out.println("<h1>Bem Vindo, "+email+"!</h1>");
+            }
 
             if (email.equals(novo.getEmail())) {
-                if (novo.getSenha().equals(senha)) {
-                    out.println("Logado com sucesso");
-                    response.sendRedirect("Home.html");
-                    out.println("<button type='button' id='btn' onclick='javascript:history.back(1)'>Continuar</button>");
+                if (novo.getSenha().equals(senha)) {                   
+                    response.sendRedirect("jsp/Home.jsp");                    
                 }
             } else {
-                out.println("<h1>Senha ou email inválidos</h1>");
-                out.println("<button type='button' id='btn' value='Voltar' onclick='javascript:history.back(1)'>Voltar</button>");
+               out.print("<script type=\'text/javascript\'>");
+                out.println("history.go(-1)");
+                out.println("alert('EMAIL OU SENHA INVÁLIDOS INVÁLIDOS!')");
+                out.print("</script>");
             }
         }
     }

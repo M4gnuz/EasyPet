@@ -13,7 +13,7 @@ public class Cliente {
     
     private String nome;
     private String sobreNome;
-    private long cpf;
+    private String cpf;
     private String email;
     private String dtNascimento;
     private String senha;
@@ -24,7 +24,7 @@ public class Cliente {
     private String cidade;    
     private String bairro;
     private String complemento;
-    private int cep;
+    private String cep;
 
 
     /**
@@ -58,14 +58,14 @@ public class Cliente {
     /**
      * @return the cpf
      */
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
     /**
      * @param cpf the cpf to set
      */
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -212,14 +212,14 @@ public class Cliente {
     /**
      * @return the cep
      */
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
     /**
      * @param cep the cep to set
      */
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
     

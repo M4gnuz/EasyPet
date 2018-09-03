@@ -41,18 +41,34 @@ public class CadastroFornecedorServlet extends HttpServlet {
             fornecedor.setRazao(request.getParameter("razaoSocial"));
             fornecedor.setEmail(request.getParameter("email"));
             fornecedor.setSenha(request.getParameter("senha"));
-            fornecedor.setCnpj(Long.parseLong(request.getParameter("cnpj")));
+            fornecedor.setCnpj(request.getParameter("cnpj"));
             fornecedor.setTelefone(request.getParameter("telefone"));
             fornecedor.setDataAbertura(request.getParameter("data"));
-            fornecedor.setCep(Integer.parseInt(request.getParameter("cep")));
+            fornecedor.setCep(request.getParameter("cep"));
             fornecedor.setEndereco(request.getParameter("endereco"));
             fornecedor.setNrRua(request.getParameter("numero"));
             fornecedor.setComplemento(request.getParameter("complemento"));
             fornecedor.setBairro(request.getParameter("bairro"));
             fornecedor.setCidade(request.getParameter("cidade"));
             
-            FornecedorDAO.addFornecedor(fornecedor);
-            response.sendRedirect("index.html");
+           Fornecedor novo = FornecedorDAO.getFornecedor(fornecedor);
+            
+            if (fornecedor.getCnpj().equals(novo.getCnpj())) {
+                out.print("<script type=\'text/javascript\'>");
+                out.println("history.go(-1)");
+                out.println("alert('CPF JA CADASTRADO!')");
+                out.print("</script>");
+
+            } else if(fornecedor.getEmail().equals(novo.getEmail())) {
+                out.print("<script type=\'text/javascript\'>");
+                out.println("history.go(-1)");
+                out.println("alert('EMAIL JA CADASTRADO!')");
+                out.print("</script>");    
+
+            } else {
+                FornecedorDAO.addFornecedor(fornecedor);
+                response.sendRedirect("index.html");
+            }
         }
     }
 

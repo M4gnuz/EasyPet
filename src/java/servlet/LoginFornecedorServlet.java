@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,15 +42,22 @@ public class LoginFornecedorServlet extends HttpServlet {
             String senha = request.getParameter("senhaL");
             
             Fornecedor novo = FornecedorDAO.loginFornecedor(email, senha);
+            
+            Cookie[] cookies = request.getCookies();      
+            
+           
 
             if (email.equals(novo.getEmail())) {
                 if (novo.getSenha().equals(senha)) {
-                    out.println("Logado com sucesso");
-                    out.println("<button type='button' id='btn' onclick='javascript:history.back(1)'>Continuar</button>");
+                   response.addCookie(new Cookie("idFornecedor", novo.getId()+""));
+                   response.addCookie(new Cookie("email", email+""));
+                   response.sendRedirect("jsp/MeusProdutos.jsp");
                 }
             } else {
-                out.println("<h1>Senha ou email inválidos</h1>");
-                out.println("<button type='button' id='btn2' value='Voltar' onclick='javascript:history.back(1)'>Voltar</button>");
+                 out.print("<script type=\'text/javascript\'>");
+                out.println("history.go(-1)");
+                out.println("alert('EMAIL OU SENHA INVÁLIDOS INVÁLIDOS!')");
+                out.print("</script>");
             }
 
         }

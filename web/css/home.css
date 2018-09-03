@@ -1,0 +1,82 @@
+
+
+
+#tudo{
+    background-color: rgb(255, 251, 236);
+    opacity: 0.8;
+ 
+}
+.teste{
+    height: 380px;
+   
+}
+#texto{
+    margin-top: 5%;
+    color: #020238;
+    display: inline;
+    margin-bottom: 7%;
+    margin-left: 3%;
+}
+
+/* imagnes corpo */
+ 
+
+    #cx1{
+        margin-top: 6%;
+        margin-bottom: 4%;
+    }
+    
+    #cx2{
+        margin-bottom: 8%;
+    }
+       
+    .letra{
+           color: #020238;
+           margin-right: 50%;
+       } 
+       .letra3{
+        color: #020238;
+        margin-left: 55%;
+    } 
+    .letra2{
+        color:#020238;
+        margin-top: 100px;
+        margin-right: 42%;
+    } 
+
+/*RODAPE*/
+footer{
+    clear: both;
+
+    padding-bottom: 25px;
+    padding-left: 25px;
+    background: rgb(243, 223, 143);
+    color: darkblue;
+    opacity: 0.8;
+    width: 100%;
+    border: 1px solid rgb(243, 223, 143);
+
+}
+span{
+    margin-left: 30%;
+}
+
+footer{
+    clear: both;
+
+    padding-bottom: 25px;
+    padding-left: 25px;
+    background: rgb(243, 223, 143);
+    color: darkblue;
+    opacity: 0.8;
+    width: 100%;
+
+}
+span{
+    margin-left: 30%;
+}
+#rod2{
+    margin-left: 18%;
+}
+
+

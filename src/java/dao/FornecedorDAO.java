@@ -20,21 +20,22 @@ public class FornecedorDAO {
     public static void addFornecedor(Fornecedor fornecedor) {
         try {
             Connection con = Conecta.getConexao();
-            String sql = "INSERT INTO tb_fornecedor VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO tb_fornecedor (nome, cnpj, email, razao, senha, endereco, numero_rua, bairro,"
+                    + "cidade, complemento, cep, data_abertura, telefone)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, fornecedor.getNome()+ "");
-            ps.setLong(2, fornecedor.getCnpj());
-            ps.setString(3, fornecedor.getRazao()+ "");
-            ps.setString(4, fornecedor.getSenha()+"");
-            ps.setString(5, fornecedor.getEndereco()+"");
-            ps.setString(6, fornecedor.getNrRua()+"");
-            ps.setString(7, fornecedor.getBairro()+"");
-            ps.setString(8, fornecedor.getCidade()+"");
-            ps.setString(9, fornecedor.getComplemento()+"");
-            ps.setInt(10,fornecedor.getCep());
-            ps.setString(11, fornecedor.getDataAbertura()+"");
-            ps.setString(12, fornecedor.getTelefone()+""); 
-            ps.setString(13, fornecedor.getEmail()+"");
+            ps.setString(2, fornecedor.getCnpj());
+            ps.setString(4, fornecedor.getRazao()+ "");
+            ps.setString(5, fornecedor.getSenha()+"");
+            ps.setString(6, fornecedor.getEndereco()+"");
+            ps.setString(7, fornecedor.getNrRua()+"");
+            ps.setString(8, fornecedor.getBairro()+"");
+            ps.setString(9, fornecedor.getCidade()+"");
+            ps.setString(10, fornecedor.getComplemento()+"");
+            ps.setString(11,fornecedor.getCep());
+            ps.setString(12, fornecedor.getDataAbertura()+"");
+            ps.setString(13, fornecedor.getTelefone()+""); 
+            ps.setString(3, fornecedor.getEmail()+"");
             ps.execute();
             ps.close();
             con.close();
@@ -55,7 +56,7 @@ public class FornecedorDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 novo.setNome(rs.getString("nome"));
-                novo.setCnpj(rs.getLong("cnpj"));
+                novo.setCnpj(rs.getString("cnpj"));
                 novo.setRazao(rs.getString("razao"));
                 novo.setSenha(rs.getString("senha"));
                 novo.setEndereco(rs.getString("endereco"));
@@ -63,10 +64,11 @@ public class FornecedorDAO {
                 novo.setBairro(rs.getString("bairro"));
                 novo.setCidade(rs.getString("cidade"));
                 novo.setComplemento(rs.getString("complemento"));
-                novo.setCep(rs.getInt("cep"));
+                novo.setCep(rs.getString("cep"));
                 novo.setDataAbertura(rs.getString("data_abertura"));
                 novo.setTelefone(rs.getString("telefone"));
-                novo.setEmail(rs.getString("email"));               
+                novo.setEmail(rs.getString("email"));
+                novo.setId(rs.getInt("id_fornecedor"));
             }
             rs.close();
             ps.close();
@@ -90,7 +92,7 @@ public class FornecedorDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 novo.setNome(rs.getString("nome"));
-                novo.setCnpj(rs.getLong("cnpj"));
+                novo.setCnpj(rs.getString("cnpj"));
                 novo.setRazao(rs.getString("razao"));
                 novo.setSenha(rs.getString("senha"));
                 novo.setEndereco(rs.getString("endereco"));
@@ -98,10 +100,11 @@ public class FornecedorDAO {
                 novo.setBairro(rs.getString("bairro"));
                 novo.setCidade(rs.getString("cidade"));
                 novo.setComplemento(rs.getString("complemento"));
-                novo.setCep(rs.getInt("cep"));
+                novo.setCep(rs.getString("cep"));
                 novo.setDataAbertura(rs.getString("data_abertura"));
                 novo.setTelefone(rs.getString("telefone"));
-                novo.setEmail(rs.getString("email"));               
+                novo.setEmail(rs.getString("email"));  
+                novo.setId(rs.getInt("id_fornecedor"));
             }
             rs.close();
             ps.close();

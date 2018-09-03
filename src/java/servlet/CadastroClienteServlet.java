@@ -43,7 +43,7 @@ public class CadastroClienteServlet extends HttpServlet {
             String masc = request.getParameter("customRadio");
             String fem = request.getParameter("customRadio");
 
-            long cpf = Long.parseLong(request.getParameter("cpf"));
+            String cpf = request.getParameter("cpf");
             String telefone = request.getParameter("telefone");
             String cep = request.getParameter("cep");
             String nrRua = request.getParameter("numero");
@@ -61,20 +61,32 @@ public class CadastroClienteServlet extends HttpServlet {
             if ("F".equals(fem)) {
                 cliente.setSexo('F');
             }
-            cliente.setCep(Integer.parseInt(request.getParameter("cep")));
+            cliente.setCep(cep);
             cliente.setEndereco(request.getParameter("endereco"));
             cliente.setNrRua(nrRua);
             cliente.setComplemento(request.getParameter("complemento"));
             cliente.setBairro(request.getParameter("bairro"));
             cliente.setCidade("cidade");
 
-            Cliente novo = ClienteDAO.getCliente(cliente);  
-           
+            Cliente novo = ClienteDAO.getCliente(cliente);
+            if (cliente.getCpf().equals(novo.getCpf())) {
+                out.print("<script type=\'text/javascript\'>");
+                out.println("history.go(-1)");
+                out.println("alert('CPF JA CADASTRADO!')");
+                out.print("</script>");
+
+            } else if(cliente.getEmail().equals(novo.getEmail())) {
+                out.print("<script type=\'text/javascript\'>");
+                out.println("history.go(-1)");
+                out.println("alert('EMAIL JA CADASTRADO!')");
+                out.print("</script>");    
+
+            } else {
                 ClienteDAO.addCliente(cliente);
                 response.sendRedirect("index.html");
-            
-            //VALIDANDO CADASTRO CLIENTE
+            }
 
+            //VALIDANDO CADASTRO CLIENTE
         }
     }
 

@@ -1,0 +1,18 @@
+SMAP
+TermosECondicoes_jsp.java
+JSP
+*S JSP
+*F
++ 0 TermosECondicoes.jsp
+jsp/TermosECondicoes.jsp
++ 1 cabecalho.jsp
+jsp/cabecalho.jsp
++ 2 rodape.jsp
+jsp/rodape.jsp
+*L
+5,20:50
+5#1,50:70
+24#0,40:119
+5#2,49:159
+63#0,4:207
+*E

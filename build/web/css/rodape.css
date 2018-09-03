@@ -1,0 +1,16 @@
+    footer{
+    clear: both;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    background: rgb(243, 223, 143);
+    color: darkblue!important;
+    opacity: 0.8;
+}
+
+.row {
+    margin-right: 0!important;
+}
+
+#rod1 a{
+    color:darkblue;
+}

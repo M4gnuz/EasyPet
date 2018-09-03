@@ -1,266 +1,77 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BEM-VINDO AO EASYPET!!</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+            
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+              crossorigin="anonymous">
 
-
-<head>
-    <meta charset="UTF-8">
-    <title>BEM-VINDO AO EASYPET!!</title>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-        crossorigin="anonymous">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
         crossorigin="anonymous"></script>
-    <style>
-        #login2 {
-            margin-left: 13%;         
-        }
 
-      
-        .cadastro {
-            color: darkblue;
-            text-align: center;
-            padding-top: 35px;
-            padding-bottom: 20px;
-        }
-        
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg  border border-dar rounded shadow p-3 mb-5">
+                <div class="logo">
+                    <h3 >EasyPet</h3>
+                    <img src="ResourcesIm/logoSite.png"/>    
+                </div>
+            </nav>
 
-        #complemento {
-            margin-left: 16%;
+            <div class="container">
+                <div id="login" class="principal col-xs-12 col-sm-5 col-md-5">
+                    <form action="LoginClienteServlet" method="post" id="formLogin">
+                        <h3 class="cadastro">Cliente</h3>
+                        <div class="form-group col-xs-12 col-sm-11 col-md-11" id="emailL">
+                            <label>E-mail:</label>
+                            <input type="text" name="emailL" class="form-control" id="inputEmailLogin">
+                        </div>
 
-        }
+                        
+                            <div class="form-group col-xs-12 col-sm-11 col-md-11" id="senhaLogin">
+                                <label>Senha:</label>
+                                <div class="input-group mb-3">
 
-        #btn {
-            border-radius: 40px;
-        }
-
-        .btn2 {
-            margin-left: 75%;
-            margin-bottom: 10px;
-        }
-
-        #senhaLogin {
-            margin-left: 17px;
-        }
-
-        #reset {
-            margin-left: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 2px;
-        }
-
-        body {
-            background: url(teste.jpg) center center no-repeat fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
-
-        .principal {            
-
-            font-weight: bold;
-
-            background-color: #EDDEA4;
-            border: 1px solid#EDDEA4;
-            border-radius: 5px;
-            opacity: 0.7;
-            color: black;
-            float: left;
-            margin-bottom: 100px;
+                                    <input type="password" name="senhaL" class="form-control" id="inputSenhaLogin">
 
 
-        }
-        .logo{
-            text-align: center;
-            margin: 0 auto; 
-            width: 279px;
-                
-        }
-        
-        .logo h3{
-            width: 0px;
-            display: block;
-            float: left;
-        }
-        
-        .logo img{
-            width: 90px;
-        }
-        nav {
-            background: rgb(243, 223, 143);
-            color: darkblue;
-            opacity: 0.5;
-        }
-        
-        @media only screen and (max-width: 600px) {
-            #login {
-                margin-left: 0px;
-            }
-            .btn2 {
-                margin-left: 74%;
-            } 
-        }
-        
-        @media only screen and (max-width: 769px) {
+                                </div>
+                            </div>
 
-            .btn2 {
-                margin-left: 60%;
-            } 
-        
-    </style>
-    
-    <script>
-        $(function(){
-		$("#entrarCliente").click(function(){                    
-                    if(validaCampoCliente() == true){
-                         $("#formLogin").submit(); 
-                    }                    
-		});	
-	});
-        
-        
-        $(function(){
-		$("#entrarFornecedor").click(function(){                    
-                    if(validaCampoFornecedor() == true){
-                        $("#formularioFornecedor").submit(); 
-                    }
-		});	
-	});
-        
-        function validaCampoCliente(){     
-            //Valida campos em branco
-            if($("#inputEmailLogin").val() == "" ){
-                alert("Por favor, preencher o campo email");
-                $("#inputEmailLogin").css("border","1px solid red");
-                $("#inputEmailLogin").focus();
-                return false
-            } else{
-                return true;
-                $("#inputEmailLogin").css("border","1px solid #ced4da");
-               }
+                            <a id="click" link href="jsp/CadastroCliente.jsp">Seja nosso Cliente! </a>
+                            <button type="button" id="entrarCliente" class=" btn2 btn btn-success">Entrar</button>
+                        
+                    </form>
 
-                if($("#inputSenhaLogin").val() == "" ){
-                        alert("Por favor, preencher o campo senha");
-                        $("#inputSenhaLogin").css("border","1px solid red");
-                        $("#inputSenhaLogin").focus();
-                        return false
-                }else{
-                     $("#inputSenhaLogin").css("border","1px solid #ced4da");
-                     return true;                    
-                }
-               
-        }
-        
-        function validaCampoFornecedor(){
-        
-        //Valida campos em branco
-            if($("#inputEmailFornecedor").val() == "" ){
-                alert("Por favor, preencher o campo email");
-                $("#inputEmailFornecedor").css("border","1px solid red");
-                $("#inputEmailFornecedor").focus();
-                return false;
-            } else{
-                $("#inputEmailFornecedor").css("border","1px solid #ced4da");
-                return true;
-            }
-            
-			
-            if($("#inputSenhaFornecedor").val() == "" ){
-                alert("Por favor, preencher o campo senha");
-                $("#inputSenhaFornecedor").css("border","1px solid red");
-                $("#inputSenhaFornecedor").focus();
-                return false;
-            }else{
-                $("#inputSenhaFornecedor").css("border","1px solid #ced4da");
-                return true;
-            }
-            
-    }    
-            
-    </script>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg  border border-dar rounded shadow p-3 mb-5">
-       
-       <div class="logo">
-            <h3 >EasyPet</h3>
-            <img src="png_pata_de_cachorro_by_live4jbiebs-d5v4esy.png"/>    
-       </div>
-
-    </nav>
-    
-    <div class="container">
-
-        
-             <div id="login" class="principal col-xs-12 col-sm-5 col-md-5">
-                 <form action="LoginClienteServlet" method="post" id="formLogin">
-        <h3 class="cadastro">Cliente</h3>
-
-
-        <div class="form-group col-xs-12 col-sm-11 col-md-11" id="emailL">
-            <label>E-mail:</label>
-            <input type="text" name="emailL" class="form-control" id="inputEmailLogin">
-        </div>
-
-
-        <div class="form-row">
-            <div class="form-group col-xs-12 col-sm-11 col-md-11" id="senhaLogin">
-                <label>Senha:</label>
-                <div class="input-group mb-3">
-
-                    <input type="password" name="senhaL" class="form-control" id="inputSenhaLogin">
-                    <button type="button" id="btn" class="btn btn-outline-dark">?</button>
 
                 </div>
+                <div id="login2" class="principal col-xs-12 col-sm-5 col-md-5">
+                    <form action="LoginFornecedorServlet" method="post" id="formularioFornecedor">
+                        <h3 class="cadastro">Fornecedor</h3>
+
+
+                        <div class="form-group col-xs-12 col-sm-11 col-md-11" id="emailLogin">
+                            <label>E-mail:</label>
+                            <input type="text" name="emailL" class="form-control" id="inputEmailFornecedor">
+                        </div>
+
+                        <div class="form-group col-xs-12 col-sm-11 col-md-11" id="senhaFornecedor">
+                            <label>Senha:</label>
+                            <div class="input-group mb-3">
+
+                                <input type="password" name="senhaL" class="form-control" id="inputSenhaFornecedor">
+
+                            </div>
+                        </div>
+                        <a id="click" link href="jsp/CadastroFornecedor.jsp">Seja nosso Fornecedor! </a>
+                        <button type="button" id="entrarFornecedor" class=" btn2 btn btn-success">Entrar</button>
+                    </form>
+                </div>        
             </div>
-
-        <a id="click" link href="CadastroCliente.html">Seja nosso Cliente! </a>
-        <button type="button" id="entrarCliente" class=" btn2 btn btn-success">Entrar</button>
-    </div>
-        </form>
-                   
-            
-        </div>
-        <div id="login2" class="principal col-xs-12 col-sm-5 col-md-5">
-        <form action="LoginFornecedorServlet" method="post" id="formularioFornecedor">
-        <h3 class="cadastro">Fornecedor</h3>
-
-
-        <div class="form-group col-xs-12 col-sm-11 col-md-11" id="emailLogin">
-            <label>E-mail:</label>
-            <input type="text" name="emailL" class="form-control" id="inputEmailFornecedor">
-        </div>
-
-
-        <div class="form-row">
-            <div class="form-group col-xs-12 col-sm-11 col-md-11" id="senhaFornecedor">
-                <label>Senha:</label>
-                <div class="input-group mb-3">
-
-                    <input type="password" name="senhaL" class="form-control" id="inputSenhaFornecedor">
-                    <button type="button" id="btn2" class="btn btn-outline-dark">?</button>
-                </div>
-            </div>
-
-
-
-        </div>
-        <a id="click" link href="CadastroFornecedor.html">Seja nosso Fornecedor! </a>
-        <button type="button" id="entrarFornecedor" class=" btn2 btn btn-success">Entrar</button>
-        </form>
-    </div>        
-    </div>
-
-
-</body>
-
-</html>
+        <script type="text/javascript" src="js/index.js"></script>
+        </body>      
+    </html>

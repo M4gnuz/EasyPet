@@ -1,0 +1,22 @@
+SMAP
+CadastroAcessorio_jsp.java
+JSP
+*S JSP
+*F
++ 0 CadastroAcessorio.jsp
+jsp/CadastroAcessorio.jsp
++ 1 cabecalho.jsp
+jsp/cabecalho.jsp
++ 2 menuLateral.jsp
+jsp/menuLateral.jsp
++ 3 rodape.jsp
+jsp/rodape.jsp
+*L
+1,25:51
+5#1,50:76
+25#0,14:125
+5#2,96:139
+38#0,56:234
+5#3,49:290
+93#0,5:338
+*E

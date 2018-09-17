@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -27,6 +28,16 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CadastroAlimentoServlet", urlPatterns = {"/CadastroAlimentoServlet"})
 public class CadastroAlimentoServlet extends HttpServlet {
+    
+    /**
+     *
+     * @param string
+     * @throws UnsupportedEncodingException
+     */
+    public void converteString(String string) throws UnsupportedEncodingException{
+            String encodedWithISO88591 = string;
+            String decodedToUTF8 = new String(encodedWithISO88591.getBytes("ISO-8859-1"), "UTF-8");
+            }
 
     Alimento alimento = new Alimento();
 
@@ -41,41 +52,50 @@ public class CadastroAlimentoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=ISO-8859-1");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
-             String preco = request.getParameter("precoA");
-        String converte ="";        
-        float valor = 0;        
-        for(int i=0;i<preco.length();i++){
-           preco.charAt(i);
-           if(preco.charAt(i)!='.' && preco.charAt(i) != ','){
-               converte += preco.charAt(i);
-           }
-           if(preco.charAt(i) == ','){
-               converte += ".";
-           }
-        }
-        valor = Float.parseFloat(converte); 
-            
+            String preco = request.getParameter("precoA");
+            String converte = "";
+            float valor = 0;
+            for (int i = 0; i < preco.length(); i++) {
+                preco.charAt(i);
+                if (preco.charAt(i) != '.' && preco.charAt(i) != ',') {
+                    converte += preco.charAt(i);
+                }
+                if (preco.charAt(i) == ',') {
+                    converte += ".";
+                }
+            }
+            valor = Float.parseFloat(converte);
+
             //alimento.setImagem(request.getParameter("customFile"));
+            
             alimento.setNome(request.getParameter("titulo"));
+            converteString(request.getParameter("titulo"));
             alimento.setDescricao(request.getParameter("descricao"));
             alimento.setContraIndicacao(request.getParameter("contra"));
-            alimento.setNomeIngrediente(request.getParameter("nome"));
-            alimento.setQtdIngrediente(Integer.parseInt(request.getParameter("qtd")));
+            alimento.setNomeIngrediente(request.getParameter("nome"));            
             alimento.setPreco(valor);
             alimento.setEstoque(Integer.parseInt(request.getParameter("estoque")));
             alimento.setDtVencimento(request.getParameter("dataV"));
             alimento.setCategoria(request.getParameter("categoria"));
-            
+
             int id = 0;
-            for (Cookie cookie : request.getCookies())
-            if (cookie.getName().equals("idFornecedor"))                
-                        id = Integer.parseInt(cookie.getValue());
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals("idFornecedor")) {
+                    id = Integer.parseInt(cookie.getValue());
+                }
+            }
 
             AlimentoDAO.addAlimento(alimento, id);
+            out.print("<script type=\'text/javascript\'>");
+            out.print("alert('Produto Cadastrado com Sucesso!');");
+            out.println("location='jsp/MeusProdutos.jsp';");
+            out.print("</script>");
+
+            response.sendRedirect("jsp/MeusProdutos.jsp");
         }
     }
 
@@ -123,37 +143,37 @@ public class CadastroAlimentoServlet extends HttpServlet {
 
         //Identifica se o formulario é do tipo multipart/form-data
         /*if (ServletFileUpload.isMultipartContent(request)) {
-            try {
-                //Faz o parse do request
-                List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+         try {
+         //Faz o parse do request
+         List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
 
-                //Escreve a o arquivo na pasta img
-                for (FileItem item : multiparts) {
-                    if (!item.isFormField()) {
-                        item.write(new File(request.getServletContext().getRealPath("img") + File.separator + "uploadfile"));
-                    }
-                }
+         //Escreve a o arquivo na pasta img
+         for (FileItem item : multiparts) {
+         if (!item.isFormField()) {
+         item.write(new File(request.getServletContext().getRealPath("img") + File.separator + "uploadfile"));
+         }
+         }
 
-                request.setAttribute("message", "Arquivo carregado com sucesso");
-            } catch (Exception ex) {
-                request.setAttribute("message", "Upload de arquivo falhou devido a " + ex);
-            }
+         request.setAttribute("message", "Arquivo carregado com sucesso");
+         } catch (Exception ex) {
+         request.setAttribute("message", "Upload de arquivo falhou devido a " + ex);
+         }
 
-        } else {
-            request.setAttribute("message", "Desculpe este Servlet lida apenas com pedido de upload de arquivos");
-        }
+         } else {
+         request.setAttribute("message", "Desculpe este Servlet lida apenas com pedido de upload de arquivos");
+         }
 
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+         request.getRequestDispatcher("/index.jsp").forward(request, response);
+         */
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
      */
-}
-
-/**
- * Returns a short description of the servlet.
- *
- * @return a String containing servlet description
- */
-@Override
-        public String getServletInfo() {
+    @Override
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

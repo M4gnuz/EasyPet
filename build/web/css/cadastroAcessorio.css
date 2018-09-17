@@ -16,8 +16,8 @@ textarea.form-control {
 }
 
 #tudo {
-    background-color: #f1f1d6;;
-    -webkit-background-size: cover;
+   background-color: rgb(226, 226, 226);
+    -webkit-ground-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -43,7 +43,7 @@ textarea.form-control {
 }
 
 .container {
-    background-color: #EDDEA4;
+
 }
 
 /*
@@ -86,7 +86,7 @@ padding: 5px 5px 5px 10px;*/
 }
 
 .card-header {
-    background-color: #EDDEA4;
+    
     color: darkblue;
     width: 100%;
 }
@@ -100,9 +100,10 @@ padding: 5px 5px 5px 10px;*/
     margin-left: 33%;
 }
 
+
 .btn-success {
-    background-color: darkblue!important;
-    border-color: #020238!important;
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
 }
 
 .btn-success:hover {
@@ -111,5 +112,18 @@ padding: 5px 5px 5px 10px;*/
     border-color: #1e7e34;
 }
 
+#excluir_fotoacessorio{
+     margin-bottom: 3%;
+     margin-top: 3%;
+}
 
-
+.card-header{
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
+    
+}
+.btn-success:hover {
+    color: darkblue;
+    background-color: #030306!important;
+    border-color: #1e7e34;
+}

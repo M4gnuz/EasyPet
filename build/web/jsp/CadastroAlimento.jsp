@@ -1,42 +1,60 @@
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="dao.FornecedorDAO"%>
+<%@page import="classes.Fornecedor"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 
 <html>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastro Produto Alimenticio</title>
-        <link rel="stylesheet" type="text/css" href="../css/cadastroAlimento.css">  
+        <title>Cadastro Produto Alímenticio</title>
+        <link rel="stylesheet" type="text/css" href="../css/cadastroAlimento.css">
+        <link rel="stylesheet" href="../Source Files/jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" href="../css/cabecalho.css"> 
         <link rel="stylesheet" type="text/css" href="../css/menuLateral.css"> 
         <link rel="stylesheet" type="text/css" href="../css/rodape.css"> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
               crossorigin="anonymous">
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="../Source Files/maskMoney.jquery.json"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+        <script src="../Source Files/jquery-ui.min.js"></script>
     </head>
     <body id="tudo">
+        <%
+            int id =0;
+            String nome="";            
+            for (Cookie cookie : request.getCookies()) {
+                            if (cookie.getName().equals("idFornecedor")) {
+                                id = Integer.parseInt(cookie.getValue());
+                                
+                            }
+                            Fornecedor novo = FornecedorDAO.getFornecedor(id);                            
+                            nome = novo.getNome();                            
+                        }            
+            %>
         <%@include file="cabecalho.jsp"%>
 
         <div class="container">
 
             <div id="petlogo" class="principal2  col-xs-12 col-sm-4 col-md-4">
-                <h4>Nome PetShop</h4>
-                <img id="fotopet" src="../ResourcesIm/logoSite.png" width="88px">
+                <h4><%=nome%></h4>
             </div>
 
         </div>
         <div class="container">
 
             <div id="logocentral" class="principal2 col-xs-12 col-sm-8 col-md-8">
-                <h1 id="nomeTopo"> Produto Alimenticio</h1>
+                <h1 id="nomeTopo"> Produto Alimentício</h1>
             </div>
 
         </div>
@@ -53,69 +71,59 @@
 
                 </div>
                 <hr>
-                <div class="form-group col-xs-12 col-sm-8 col-md-8" id="titulop">
+                <div class="form-group col-xs-12 col-sm-10 col-md-10" id="titulop">
                     <label>Titulo do Produto: *</label>
                     <input type="text" name="titulo" class="form-control" id="inputTitulo">
                 </div>
 
 
                 <div class="form-group col-xs-12 col-sm-10 col-md-10" id="descri">
-                    <label for="exampleFormControlTextarea1">DescriÃ§Ã£o</label>
-                    <textarea class="form-control" name="descricao" id="txtdescricao" rows="4"></textarea>
+                    <label for="exampleFormControlTextarea1">Descrição</label>
+                    <textarea class="form-control" name="descricao" id="txtdescricao" rows="4"  maxlength="270" placeholder="Faça uma descrição do produto com até 270 caracteres."></textarea>
                 </div>
                 <div class="form-group col-xs-12 col-sm-10 col-md-10" id="contraindicacao">
-                    <label for="exampleFormControlTextarea1">Contra-IndicaÃ§Ã£o</label>
-                    <textarea class="form-control" name="contra" id="txtcontrain" rows="3"></textarea>
-                    <h4>Ingredientes</h4>
+  
+                        <label for="exampleFormControlTextarea1">Contra-Indicação</label>
+                        <textarea class="form-control" name="contra" id="txtcontrain" rows="3" maxlength="200"></textarea>
+                   
+                    <!-- PESQUISAR JQUERY CLONE PARA ESSA FUNÇÃO// OU ARRAY METODO POST -->
+                    <br>
 
-
-                    <!-- PESQUISAR JQUERY CLONE PARA ESSA FUNÃ‡ÃƒO// OU ARRAY METODO POST -->
-
-
-                    <div class="col-xs-12 col-sm-12 col-md-12 row">
-                        <div class="     col-xs-12 col-sm-6 col-md-6" id="nome">
-                            <label>Nome: </label>
-                            <input type="text" name="nome" class="form-control" id="inputNomeP">
-                        </div>
-                        <div class="     col-xs-12 col-sm-3 col-md-3" id="nome">
-                            <label>Quantidade: </label>
-                            <input type="text" name="qtd" class="form-control" id="inputqtd">
-                        </div>
-
-                    </div>
-
-                    <a link href=""><h6 id="add">Adicionar Ingredientes</h6> </a>
+                        <label for="exampleFormControlTextarea1">Ingredientes*</label>
+                        <textarea class="form-control" name="contra" id="txtIngredientes" rows="3"></textarea>
                     <hr>
 
                     <div class="row">
-                        <div class="form-group col-xs-12 col-sm-3    col-md-3" id="precoA">
+                        <div class="form-group col-xs-12 col-sm-4    col-md-4" id="precoA">
                             <div class="form-group " id="preco">
-                                <label class="fonte">PreÃ§o: *</label>
+                                <label class="fonte">Preço: *</label>
                                 <input type="text" name="precoA" class="form-control" id="inputPrecoA">
 
                             </div>
                         </div>
-                        <div class="form-group col-xs-12 col-sm-2    col-md-2" id="estoqueA">
+                        <div class="form-group col-xs-12 col-sm-3 col-md-3" id="estoqueA">
                             <div class=" form-group " id="estoque">
                                 <label class="fonte">Estoque:*</label>
                                 <input type="number" name="estoque" class="form-control" id="inputEstoqueA">
-
                             </div>
                         </div>
-                        <div class="form-group col-xs-12 col-sm-4    col-md-4" id="dataV">
+                        <div class="form-group col-xs-12 col-sm-5 col-md-5" id="dataV">
                             <div class="form-group " id="data">
                                 <label class="fonte"> Data Vencimento:*</label>
-                                <input type="date" name="dataV" class="form-control" id="inputDataV">
-
+                                <input type="text" name="dataV" class="form-control" id="inputDataV">
                             </div>
                         </div>
 
-                        <div class=" form-group col-xs-12 col-sm-3 col-md-3">
+                        <div class=" form-group col-xs-12 col-sm-7 col-md-7">
                             <div class=" form-group ">
-                                <label class="fonte">Categorias: *</label>
+                                <label>Categorias de alimentos para: *</label>
                                 <select class="custom-select" name="categoria" id="inputGroupSelect02">
                                     <option selected>--</option>
-                                    <option value="1">Alimentos</option>
+                                    <option value="1">Cachorros</option>
+                                    <option value="1">Gatos</option>
+                                    <option value="1">Pássaros</option>
+                                    <option value="1">hamsters</option>
+                                    <option value="1">Peixes</option>                                   
                                 </select>
                             </div>
                         </div>
@@ -125,6 +133,6 @@
             </div>
         </form>   
         <%@include file="rodape.jsp"%>	
-        <script type="text/javascript" src="../js/cadastroAlimento.js"></script>   
+        <script type="text/javascript" src="../js/cadastroAlimento.js"></script> 
     </body>
 </html>

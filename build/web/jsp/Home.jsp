@@ -12,7 +12,7 @@
         <title>Home</title>
         <link rel="stylesheet" type="text/css" href="../css/home.css">
         <link rel="stylesheet" type="text/css" href="../css/rodape.css"> 
-        <link rel="stylesheet" type="text/css" href="../css/cabecalho.css">  
+        <link rel="stylesheet" type="text/css" href="../css/cabecalhoCliente.css">  
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
@@ -20,51 +20,58 @@
               crossorigin="anonymous">
     </head>
     <body id="tudo">
-        <%@include file="cabecalho.jsp"%>
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100 teste" src="../ResourcesIm/banho.png" alt="First slide">
-                    <div class="carousel-caption ">
-                        <h1 class="letra">Cuidados para seu Pet</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100 teste" src="../ResourcesIm/software-de-gestao.jpg" alt="Second slide">
-                    <div class="carousel-caption ">
-                        <h1 class="letra3">Plataforma Completa para Logista </h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100 teste" src="../ResourcesIm/dog-oculos.jpg" alt="Third slide">
-                    <div class="carousel-caption ">
-                        <h1 class="letra3">Acessórios Para seu Pet</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100 teste" src="../ResourcesIm/logo6.jpg" alt="Four slide">
-                    <div class="carousel-caption ">
-                        <h1 class="letra2">Entrega Rapida e Pratica</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100 teste" src="../ResourcesIm/logo4.jpg" alt="Third slide">
-                    <div class="carousel-caption ">
-                        <h1 class="letra">Produtos Para seu Pet</h1>
+        <%@include file="CabecalhoCliente.jsp"%>
 
-                    </div>
+        <div class="container" >
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 teste" src="../ResourcesIm/help1.jpg" alt="First slide">
+                                <div class="carousel-caption ">
+                                    <h1 id="letra" >Cuidados para seu Pet</h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 teste" src="../ResourcesIm/banner03.jpg" alt="Second slide">
+                                <div class="carousel-caption ">
+                                    <h1 id="letra" >Plataforma Completa para Logista </h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 teste" src="../ResourcesIm/help2.jpg" alt="Third slide">
+                                <div class="carousel-caption ">
+                                    <h1 id="letra" >Acessórios Para seu Pet</h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 teste" src="../ResourcesIm/banner04.jpg" alt="Four slide">
+                                <div class="carousel-caption ">
+                                    <h1 id="letra">Entrega Rapida e Pratica</h1>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 teste" src="../ResourcesIm/banner05.jpg" alt="Third slide">
+                                <div class="carousel-caption ">
+                                    <h1 id="letra">Produtos Para seu Pet</h1>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>                 
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div> 
-        <div class="container" >
+
             <h1 id="homeT"> Delivery e Cuidados para seu Animalzinho, <br>
                 <span> agora mais proximo de você!</span></h1>
 
@@ -91,7 +98,7 @@
                 </p>
             </div>     
         </div>   
-    
-    <%@include file="rodape.jsp"%>
+
+        <%@include file="rodape.jsp"%>
     </body>
 </html>

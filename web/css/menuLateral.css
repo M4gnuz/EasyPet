@@ -1,8 +1,14 @@
 .btn-link {
     color:darkblue!important;
-    
+
 }
 
 .card-body li a{
     color:darkblue;
+    text-decoration: none;
+}
+
+
+#caixa1 .principal{
+    margin-bottom: 200px;
 }

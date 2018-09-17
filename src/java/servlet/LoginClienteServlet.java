@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,17 +45,11 @@ public class LoginClienteServlet extends HttpServlet {
             String email = request.getParameter("emailL");
             String senha = request.getParameter("senhaL");
             Cliente novo = ClienteDAO.loginCliente(email, senha);
-            
-            if(novo.getEmail() == null || novo.getSenha() == null){
-                if(session.getAttribute("emailL") != null && session.getAttribute("senhaL") != null){
-                    email = session.getAttribute("emailL").toString();
-                    senha = session.getAttribute("senhaL").toString();
-                }
-            }         
-            
 
             if (email.equals(novo.getEmail())) {
-                if (novo.getSenha().equals(senha)) {                   
+                if (novo.getSenha().equals(senha)) {
+                    response.addCookie(new Cookie("idCliente", novo.getId()+""));
+                   response.addCookie(new Cookie("email", email+""));
                     response.sendRedirect("jsp/Home.jsp");                    
                 }
             } else {

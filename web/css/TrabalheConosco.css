@@ -1,0 +1,98 @@
+body {
+    background: url(../ResourcesIm/gato.jpg) center center no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+.principal {
+    height: 250px;
+    font-weight: bold;  
+    border-radius: 5px;  
+    color: black;
+    float: left;
+    margin-bottom: 45px;
+    
+    margin-top: 5px;
+    font-size: 14pt;
+    border-color: #cf9bcc!important;
+    
+}
+.principalForm {
+    height: 400px;
+    width: 250px;
+    
+    font-weight: bold;  
+    
+    color: black;
+    float: left;
+    margin-bottom: 45px;
+    margin-left: 300px;
+    
+    
+    
+}
+.principalEC {
+    height: 60px;
+    font-weight: bold;  
+    color: black;
+    float: left;
+    margin-bottom: 45px;
+    margin-left: 6px;
+    width: -15px !important;
+}
+
+#btn_enviarFormularioDeDuvidas{
+    width: 150px;
+    
+    
+}
+#tudo{      
+    
+    background-color: rgb(226, 226, 226)!important;
+    
+}
+.cadastro {
+    color: darkblue;
+    text-align: center;
+    padding-bottom: 20px;
+}
+#anexoEC{
+    font-weight: bold;  
+    border-radius: 5px;  
+    color: black;
+    float: left;
+    width: 100%;    
+    margin-top: -1px;
+    
+    cursor: pointer;
+    
+    margin-left: 15px;
+}
+.tituloEC{
+    margin-left: 350px;
+    margin-top: 7px;
+    color: darkblue;
+    font-size: 10pt;  
+    font-size: 12pt;
+}
+label{
+    color: darkblue;
+    font-size: 12pt;
+}
+
+.enviarCurriculo{
+    width: 300px !important;
+}
+#btn_enviarEC{
+    margin-top: 20px;
+    margin-left: 100px; 
+    color: darkblue !important;
+    background-color: #cf9bcc !important;
+}
+#borda{
+    border: 3px;
+}
+

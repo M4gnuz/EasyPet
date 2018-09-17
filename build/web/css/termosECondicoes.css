@@ -1,11 +1,31 @@
 #texto{
-    background-color: #f5e5a5;
+   background-color: #cf9bcc;
     height: 500px;
-    overflow: scroll;
+   
+    opacity: 0.8;
+    border-radius: 5%;
+    text-align: center;
+    padding-top: 3%;
+    color: darkblue;
+    margin-bottom: 8%;
+    
 }
 
 .titulo{
     text-align: center;
     color: darkblue;
-}
+    margin-top: 6%;
+    margin-bottom: 6%;
 
+}
+#tudo{
+   background-color: rgb(226, 226, 226);
+}
+.img-fluid{
+    border-radius: 5%;
+}
+#termos{
+    
+    margin-bottom: 3%;
+
+}

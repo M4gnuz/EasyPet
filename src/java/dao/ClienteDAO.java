@@ -17,28 +17,28 @@ import java.sql.Statement;
  * @author glima
  */
 public class ClienteDAO {
-    
-             public static void addCliente(Cliente cliente) {          
-   
+
+    public static void addCliente(Cliente cliente) {
+
         try {
             Connection con = Conecta.getConexao();
             String sql = "INSERT INTO tb_cliente (nome, sobrenome, cpf, email,"
                     + "dt_nascimento, senha, sexo, telefone, endereco, numero_rua, "
                     + "cidade, bairro, complemento, cep) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, cliente.getNome()+ "");
-            ps.setString(2, cliente.getSobreNome()+ "");
+            ps.setString(1, cliente.getNome() + "");
+            ps.setString(2, cliente.getSobreNome() + "");
             ps.setString(3, cliente.getCpf());
-            ps.setString(4, cliente.getEmail()+"");
-            ps.setString(5, cliente.getDtNascimento()+"");
-            ps.setString(6, cliente.getSenha()+"");
-            ps.setString(7, cliente.getSexo()+"");
-            ps.setString(8, cliente.getTelefone()+"");
-            ps.setString(9, cliente.getEndereco()+"");
-            ps.setString(10, cliente.getNrRua()+"");
-            ps.setString(11, cliente.getCidade()+"");
-            ps.setString(12, cliente.getBairro()+"");
-            ps.setString(13, cliente.getComplemento()+"");
+            ps.setString(4, cliente.getEmail() + "");
+            ps.setString(5, cliente.getDtNascimento() + "");
+            ps.setString(6, cliente.getSenha() + "");
+            ps.setString(7, cliente.getSexo() + "");
+            ps.setString(8, cliente.getTelefone() + "");
+            ps.setString(9, cliente.getEndereco() + "");
+            ps.setString(10, cliente.getNrRua() + "");
+            ps.setString(11, cliente.getCidade() + "");
+            ps.setString(12, cliente.getBairro() + "");
+            ps.setString(13, cliente.getComplemento() + "");
             ps.setString(14, cliente.getCep());
             ps.execute();
             ps.close();
@@ -47,15 +47,104 @@ public class ClienteDAO {
             e.printStackTrace();
         }
     }
-             
-     public static Cliente loginCliente(String email, String senha){
+    
+    public static void alteraCliente(Cliente cliente){
+        try {
+            Connection con = Conecta.getConexao();
+            String sql = "UPDATE tb_cliente SET nome=?, sobrenome=?,"
+                    + "dt_nascimento=?, senha=?, sexo=?, telefone=?, endereco=?, numero_rua=?, "
+                    + "cidade=?, bairro=?, complemento=?, cep=? WHERE id=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getNome() + "");
+            ps.setString(2, cliente.getSobreNome() + "");
+            ps.setString(3, cliente.getDtNascimento() + "");
+            ps.setString(4, cliente.getSenha() + "");
+            ps.setString(5, cliente.getSexo() + "");
+            ps.setString(6, cliente.getTelefone() + "");
+            ps.setString(7, cliente.getEndereco() + "");
+            ps.setString(8, cliente.getNrRua() + "");
+            ps.setString(9, cliente.getCidade() + "");
+            ps.setString(10, cliente.getBairro() + "");
+            ps.setString(11, cliente.getComplemento() + "");
+            ps.setString(12, cliente.getCep());
+            ps.setInt(13, cliente.getId());
+            ps.execute();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static String recuperarSenha(String email){
+        String senha="";
+        try {
+            Connection con = Conecta.getConexao();
+            String sql = "SELECT senha FROM  tb_cliente WHERE email= ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                senha = rs.getString("senha");
+            }
+            rs.close();
+            ps.close();
+            con.close();
+            return senha;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return senha;
+        }
+    }
+
+    public static boolean confereEmail(Cliente cliente) {
+        try {
+            Connection con = Conecta.getConexao();
+            String sql = "SELECT * FROM  tb_cliente WHERE email= ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getEmail() + "");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+            rs.close();
+            ps.close();
+            con.close();
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean confereCPF(Cliente cliente) {
+        try {
+            Connection con = Conecta.getConexao();
+            String sql = "SELECT * FROM  tb_cliente WHERE cpf= ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getCpf() + "");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+            rs.close();
+            ps.close();
+            con.close();
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static Cliente loginCliente(String email, String senha) {
         Cliente novo = new Cliente();
-        try{
+        try {
             Connection con = Conecta.getConexao();
             String sql = "SELECT * FROM  tb_cliente WHERE email= ? AND senha=?";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, email+"");
-            ps.setString(2, senha+"");            
+            ps.setString(1, email + "");
+            ps.setString(2, senha + "");
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 novo.setNome(rs.getString("nome"));
@@ -72,25 +161,25 @@ public class ClienteDAO {
                 novo.setBairro(rs.getString("bairro"));
                 novo.setComplemento(rs.getString("complemento"));
                 novo.setCep(rs.getString("cep"));
-            } 
+                novo.setId(rs.getInt("id_cliente"));
+            }
             rs.close();
             ps.close();
             con.close();
             return novo;
-        }
-        catch(Exception e){
-            e.printStackTrace();            
+        } catch (Exception e) {
+            e.printStackTrace();
             return novo;
         }
-        
+
     }
-     
-     public static Cliente getCliente(Cliente cliente){
+
+    public static Cliente getCliente(Cliente cliente) {
         Cliente novo = new Cliente();
-        try{
+        try {
             Connection con = Conecta.getConexao();
             String sql = "SELECT * FROM  tb_cliente";
-            PreparedStatement ps = con.prepareStatement(sql);                    
+            PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 novo.setNome(rs.getString("nome"));
@@ -107,18 +196,16 @@ public class ClienteDAO {
                 novo.setBairro(rs.getString("bairro"));
                 novo.setComplemento(rs.getString("complemento"));
                 novo.setCep(rs.getString("cep"));
-            } 
+                novo.setId(rs.getInt("id_cliente"));
+            }
             rs.close();
             ps.close();
             con.close();
             return novo;
-        }
-        catch(SQLException e){
-            e.printStackTrace();            
+        } catch (SQLException e) {
+            e.printStackTrace();
             return novo;
         }
-        
+
     }
 }
-
-    

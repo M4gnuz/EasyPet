@@ -11,6 +11,7 @@ package classes;
  */
 public class Cliente {
     
+    private int id;
     private String nome;
     private String sobreNome;
     private String cpf;
@@ -95,7 +96,7 @@ public class Cliente {
      */
     public void setDtNascimento(String dtNascimento) {
         this.dtNascimento = dtNascimento;
-    }
+    }      
 
     /**
      * @return the senha
@@ -221,6 +222,20 @@ public class Cliente {
      */
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     

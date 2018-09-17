@@ -2,8 +2,10 @@
 
 
 #tudo{
-    background-color: rgb(255, 251, 236);
+   /* background-color: rgb(255, 251, 236);*/
+    background-color: rgb(226, 226, 226);
     opacity: 0.8;
+    z-index:1;
  
 }
 .teste{
@@ -30,19 +32,9 @@
         margin-bottom: 8%;
     }
        
-    .letra{
-           color: #020238;
-           margin-right: 50%;
-       } 
-       .letra3{
-        color: #020238;
-        margin-left: 55%;
-    } 
-    .letra2{
-        color:#020238;
-        margin-top: 100px;
-        margin-right: 42%;
-    } 
+    #letra{
+        color: whitesmoke;
+    }
 
 /*RODAPE*/
 footer{

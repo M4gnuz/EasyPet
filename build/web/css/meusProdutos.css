@@ -2,13 +2,17 @@
  /*-----------PARETE FIXA INICIO-----------*/
 
 #tudo {
-    background-color: #f1f1d6;;
+   background-color: rgb(226, 226, 226);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-
+.card-header {
+    background-color: rgb(226, 226, 226);
+    color: darkblue;
+    width: 100%;
+}
 #fotopet {
     float: left;
 }
@@ -56,8 +60,8 @@ padding: 5px 5px 5px 10px;*/
 }
 
 .btn-success {
-    background-color: darkblue!important;
-    border-color: #020238!important;
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
 }
 
 .btn-success:hover {
@@ -71,6 +75,11 @@ padding: 5px 5px 5px 10px;*/
  
  h1{
     text-align: center;
+}li {
+    list-style: none;
+    margin-left: 0%;
+    font-size: 14px;
+    padding-top: 15px;
 }
 
 #logocentral{
@@ -87,16 +96,21 @@ padding: 5px 5px 5px 10px;*/
     font-size: 25px;
 }
 
-#tabela_busca_meus_produtos #excluirProd:hover{
+.fa-trash-alt:hover{
     color:#e60f0f;
 }
 
-#tabela_busca_meus_produtos #editarProd:hover{
+.fa-edit:hover{
     color:#c1c12a;;
 }
 
 .table .thead-dark th {
     color: #fff;
-    background-color:darkblue!important;
+    background-color:#cf9bcc!important;
     border-color: #32383e;
+}
+.card-header{
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
+    
 }

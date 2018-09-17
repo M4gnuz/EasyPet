@@ -9,6 +9,7 @@ import classes.Fornecedor;
 import dao.FornecedorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +22,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CadastroFornecedorServlet", urlPatterns = {"/CadastroFornecedorServlet"})
 public class CadastroFornecedorServlet extends HttpServlet {
+    
+     public void converteString(String string) throws UnsupportedEncodingException{
+            String encodedWithISO88591 = string;
+            String decodedToUTF8 = new String(encodedWithISO88591.getBytes("ISO-8859-1"), "UTF-8");
+            }
         Fornecedor fornecedor = new Fornecedor();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,30 +42,41 @@ public class CadastroFornecedorServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String data = request.getParameter("data");
+            String datanova = "";
+            for(int x = 0; x<data.length();x++){
+                if(data.charAt(x)!='/')
+               datanova+=data.charAt(x);
+            }
+            String dia=datanova.charAt(2)+""+datanova.charAt(3);
+            String mes =datanova.charAt(0)+""+datanova.charAt(1);
+            String ano =datanova.charAt(4)+"" + datanova.charAt(5)+"" + datanova.charAt(6)+"" + datanova.charAt(7);
+            String dataCerta = ano + mes + dia;
+            System.out.print(dataCerta);
             
             fornecedor.setNome(request.getParameter("nome"));
+            converteString(request.getParameter("nome"));
             fornecedor.setRazao(request.getParameter("razaoSocial"));
             fornecedor.setEmail(request.getParameter("email"));
             fornecedor.setSenha(request.getParameter("senha"));
             fornecedor.setCnpj(request.getParameter("cnpj"));
             fornecedor.setTelefone(request.getParameter("telefone"));
-            fornecedor.setDataAbertura(request.getParameter("data"));
+            fornecedor.setDataAbertura(dataCerta);
             fornecedor.setCep(request.getParameter("cep"));
             fornecedor.setEndereco(request.getParameter("endereco"));
             fornecedor.setNrRua(request.getParameter("numero"));
             fornecedor.setComplemento(request.getParameter("complemento"));
             fornecedor.setBairro(request.getParameter("bairro"));
             fornecedor.setCidade(request.getParameter("cidade"));
+           
             
-           Fornecedor novo = FornecedorDAO.getFornecedor(fornecedor);
-            
-            if (fornecedor.getCnpj().equals(novo.getCnpj())) {
+            if (FornecedorDAO.confereCNPJ(fornecedor)) {
                 out.print("<script type=\'text/javascript\'>");
                 out.println("history.go(-1)");
-                out.println("alert('CPF JA CADASTRADO!')");
+                out.println("alert('CNPJ JA CADASTRADO!')");
                 out.print("</script>");
 
-            } else if(fornecedor.getEmail().equals(novo.getEmail())) {
+            } else if(FornecedorDAO.confereEmail(fornecedor)) {
                 out.print("<script type=\'text/javascript\'>");
                 out.println("history.go(-1)");
                 out.println("alert('EMAIL JA CADASTRADO!')");
@@ -69,7 +86,6 @@ public class CadastroFornecedorServlet extends HttpServlet {
                 FornecedorDAO.addFornecedor(fornecedor);
                 response.sendRedirect("index.html");
                 out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
                 out.println("alert('Cadastrado com Sucesso')");
                 out.print("</script>");
             }

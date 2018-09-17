@@ -17,12 +17,11 @@ public class Alimento extends  Produto{
     
     public Alimento(){}
     
-    public Alimento(byte[] imagem, String nome, String descricao, String contraIndicacao, 
+    public Alimento(String imagem, String nome, String descricao, String contraIndicacao, 
             float preco, int estoque, String categoria, String nomeIngrediente, int qtdIngrediente,
             String dtVencimento){
         super(imagem, nome, descricao, contraIndicacao, preco, estoque, categoria);
-        this.nomeIngrediente = nomeIngrediente;
-        this.qtdIngrediente = qtdIngrediente;
+        this.nomeIngrediente = nomeIngrediente;        
         this.dtVencimento = dtVencimento;
     }
     
@@ -33,15 +32,7 @@ public class Alimento extends  Produto{
     public void setNomeIngrediente(String nomeIngrediente) {
         this.nomeIngrediente = nomeIngrediente;
     }
-
-    public int getQtdIngrediente() {
-        return qtdIngrediente;
-    }
-
-    public void setQtdIngrediente(int qtdIngrediente) {
-        this.qtdIngrediente = qtdIngrediente;
-    }
-
+  
     public String getDtVencimento() {
         return dtVencimento;
     }

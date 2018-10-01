@@ -9,6 +9,7 @@ import classes.Cliente;
 import dao.ClienteDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +23,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CadastroClienteServlet", urlPatterns = {"/CadastroClienteServlet"})
 public class CadastroClienteServlet extends HttpServlet {
+     public void converteString(String string) throws UnsupportedEncodingException{
+            String encodedWithISO88591 = string;
+            String decodedToUTF8 = new String(encodedWithISO88591.getBytes("ISO-8859-1"), "UTF-8");
+            }
 
     Cliente cliente = new Cliente();
 
@@ -36,7 +41,7 @@ public class CadastroClienteServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=ISO-8859-1");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
@@ -49,12 +54,14 @@ public class CadastroClienteServlet extends HttpServlet {
             String nrRua = request.getParameter("numero");
 
             cliente.setNome(request.getParameter("nome"));
+            converteString(request.getParameter("nome"));
             cliente.setSobreNome(request.getParameter("sobrenome"));
             cliente.setEmail(request.getParameter("email"));
             cliente.setSenha(request.getParameter("senha"));
             cliente.setCpf(cpf);
             cliente.setTelefone(telefone);
             cliente.setDtNascimento(request.getParameter("data"));
+            
             if ("M".equals(masc)) {
                 cliente.setSexo('M');
             }
@@ -67,30 +74,33 @@ public class CadastroClienteServlet extends HttpServlet {
             cliente.setComplemento(request.getParameter("complemento"));
             cliente.setBairro(request.getParameter("bairro"));
             cliente.setCidade("cidade");
+            String data = request.getParameter("data");
+            String datanova = "";
+            for(int x = 0; x<data.length();x++){
+                if(data.charAt(x)!='/')
+               datanova+=data.charAt(x);
+            }
+            String dia=datanova.charAt(2)+""+datanova.charAt(3);
+            String mes =datanova.charAt(0)+""+datanova.charAt(1);
+            String ano =datanova.charAt(4)+"" + datanova.charAt(5)+"" + datanova.charAt(6)+"" + datanova.charAt(7);
+            String dataCerta = ano + mes + dia;
+            cliente.setDtNascimento(dataCerta);
 
-            Cliente novo = ClienteDAO.getCliente(cliente);
-            if (cliente.getCpf().equals(novo.getCpf())) {
-                out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
-                out.println("alert('CPF JA CADASTRADO!')");
-                out.print("</script>");
+             //VALIDANDO CADASTRO CLIENTE no BANCO
+            if (ClienteDAO.confereCPF(cliente)) {                
+                response.sendRedirect("jsp/CadastroCliente.jsp?filtro=Cpf");
 
-            } else if(cliente.getEmail().equals(novo.getEmail())) {
-                out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
-                out.println("alert('EMAIL JA CADASTRADO!')");
-                out.print("</script>");    
+            } else if(ClienteDAO.confereEmail(cliente)) {                
+                response.sendRedirect("jsp/CadastroCliente.jsp?filtro=Email");
 
             } else {
                 ClienteDAO.addCliente(cliente);
                 response.sendRedirect("index.html");
                 out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
                 out.println("alert('Cadastrado com Sucesso')");
                 out.print("</script>");
             }
-
-            //VALIDANDO CADASTRO CLIENTE
+           
         }
     }
 

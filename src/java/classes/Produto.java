@@ -11,7 +11,9 @@ package classes;
  */
 public class Produto {
     
-    private byte[] imagem;
+    private int id;
+    private int idFornecedor;
+    private String imagem;
     private String nome;
     private String descricao;
     private String contraIndicacao;
@@ -21,8 +23,9 @@ public class Produto {
     
     public Produto(){}
     
-    public Produto(byte[] imagem, String nome, String descricao, String contraIndicacao,
-            float preco, int estoque, String categoria){
+    public Produto(String imagem, String nome, String descricao, String contraIndicacao,
+            float preco, int estoque, String categoria, int idFornecedor){
+        this.idFornecedor = idFornecedor;
         this.imagem = imagem;
         this.nome = nome;
         this.descricao = descricao;
@@ -32,11 +35,19 @@ public class Produto {
         this.categoria = categoria;
     }
     
-    public byte[] getImagem(){
+    public int getIdFornecedor(){
+        return this.idFornecedor;
+    }
+    
+    public void setIdFornecedor(int id){
+        this.idFornecedor = id;
+    }
+    
+    public String getImagem(){
         return this.imagem;
     }
     
-    public void setImagem(byte[] imagem){
+    public void setImagem(String imagem){
         this.imagem = imagem;
     }
     
@@ -86,6 +97,20 @@ public class Produto {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     

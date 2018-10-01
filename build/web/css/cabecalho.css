@@ -3,6 +3,10 @@
     
 }
 
+#menuFornecedor{
+    margin-left: 15px;    
+}
+
 #logocentral{
     padding-top: 2%;
     padding-left: 2%;
@@ -27,9 +31,10 @@
 
 
 nav {
-    background: rgb(243, 223, 143);
+   background: #a0cce9;
     color: darkblue;
     opacity: 0.8;
+    z-index:2;
    
 }
 
@@ -40,8 +45,8 @@ nav {
 }
 
 .btn-success {
-    background-color: darkblue!important;
-    border-color: #020238!important;
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
 }
 
 .btn-success:hover {
@@ -59,7 +64,10 @@ nav {
    color:#020238;
 }
 span{
-    margin-left: 13%;
+    /*margin-left: 13%;*/
     color: #020238;;
 }
 
+#btn-sairFornecedor{
+    margin-left: 20px;
+}

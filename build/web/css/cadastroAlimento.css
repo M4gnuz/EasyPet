@@ -7,8 +7,12 @@ li {
     padding-top: 15px;
 }
 
+#nomeTopo{
+    text-align: center;
+}
+
 #tudo {
-    background-color: #f1f1d6;;
+  background-color: rgb(226, 226, 226);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,12 +27,16 @@ li {
     text-align: center;
     padding-top: 5%;
 }
-
+.card-header{
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
+    
+}
 .card-body {
     width: 100%;
     padding-top: 15px;
     text-align: left;
-    background-color:  rgb(255, 255, 198);
+    
     opacity: 0.9;
 }
 
@@ -149,12 +157,23 @@ li {
 }
 
 .btn-success {
-    background-color: darkblue!important;
+    background-color: darkblue;
     border-color: #020238!important;
+    color: darkblue!important;
 }
 
 .btn-success:hover {
-    color: #fff;
+    color: darkblue;
     background-color: #030306!important;
     border-color: #1e7e34;
+}
+
+.btn-cancel{
+   background: gray!important;
+   color: white!important; 
+   margin-right: 20px
+}
+
+.btn-cancel:hover {
+    background-color: black!important;
 }

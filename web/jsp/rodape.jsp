@@ -14,7 +14,7 @@
     </head>
     <body>
         <footer>
-            <hr>
+            
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <div id="rod1">

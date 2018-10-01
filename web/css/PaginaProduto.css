@@ -1,0 +1,100 @@
+#paginaP{
+     margin-top: 5%;
+     margin-bottom:  5%;
+      text-align: center;
+    color: darkblue;
+}
+#valorProduto{
+    margin-top: 20%;
+    text-align: center;
+    color: darkblue;
+    margin-bottom: 15%;
+}
+.btnF{
+    margin-left: 17%;
+    
+}
+.btn-primary{
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
+    color: white;
+}
+.btn-primary:hover{
+     background-color: darkblue!important;
+      border-color: darkblue!important;
+      color: white;
+}
+
+
+.btn-outline-dark{
+    margin-top: 10%;
+    margin-left: 17%;
+     border-color: darkblue!important;
+     color: darkblue!important;
+}
+.btn-outline-dark:hover{
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
+    color: white!important;
+    
+}
+.container{
+    margin-top: 5%;
+}
+
+.imagemProd{
+    width: 450px;
+    height: 500px;
+}
+
+.nomePet{
+     margin-left: 32%;
+}
+.estrelas{
+    margin-left: 25%;
+}
+
+.apagada {
+  background-image: url('http://www.biblecast.net.br/resources/estrela-prata.png');
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.destaque {
+  background-image: url(../ResourcesIm/estrela.png);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+#txtcaracteristica{
+     background-color: #cf9bcc;
+    height: 200px;
+   
+    opacity: 0.7;
+    border-radius: 5%;
+    text-align: center;
+    padding-top: 3%;
+    color: darkblue;
+    margin-bottom: 8%;
+    overflow: auto;
+}
+
+
+.descricao{
+
+    height: 500px!important;   
+}
+#geral{
+     background-color: #cf9bcc;
+     opacity: 0.8;
+     overflow: auto;
+     font-weight: bold;
+     border-radius: 5px;
+     padding-top: 5px;
+    
+}
+.dsc{
+    margin-bottom: 2%;
+}

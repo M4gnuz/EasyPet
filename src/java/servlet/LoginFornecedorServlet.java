@@ -10,7 +10,6 @@ import dao.FornecedorDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author glima
  */
-@WebServlet(name = "LoginFornecedorServlet", urlPatterns = {"/LoginFornecedorServlet"})
 public class LoginFornecedorServlet extends HttpServlet {
 
     /**
@@ -37,8 +35,7 @@ public class LoginFornecedorServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-
-            String email = request.getParameter("emailL");
+           String email = request.getParameter("emailL");
             String senha = request.getParameter("senhaL");
             
             Fornecedor novo = FornecedorDAO.loginFornecedor(email, senha);
@@ -50,8 +47,9 @@ public class LoginFornecedorServlet extends HttpServlet {
             if (email.equals(novo.getEmail())) {
                 if (novo.getSenha().equals(senha)) {
                    response.addCookie(new Cookie("idFornecedor", novo.getId()+""));
-                   response.addCookie(new Cookie("email", email+""));
-                   response.sendRedirect("jsp/MeusProdutos.jsp");
+                   response.addCookie(new Cookie("email", email+"")); 
+                   response.addCookie(new Cookie("nivel", "2"));
+                    response.sendRedirect("jsp/MeusProdutos.jsp?status=Login");
                 }
             } else {
                  out.print("<script type=\'text/javascript\'>");
@@ -59,7 +57,6 @@ public class LoginFornecedorServlet extends HttpServlet {
                 out.println("alert('EMAIL OU SENHA INVÁLIDOS INVÁLIDOS!')");
                 out.print("</script>");
             }
-
         }
     }
 

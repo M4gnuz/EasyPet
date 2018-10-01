@@ -10,20 +10,7 @@ package classes;
  * @author glima
  */
 public class Fornecedor {
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
     private int id;
     private String nome;
     private String cnpj;
@@ -38,6 +25,25 @@ public class Fornecedor {
     private String dataAbertura;
     private String telefone;
     private String email;
+    private String inicio;
+    private String termino;
+    private String descricao;
+    private String imagem;
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     
     /**
      * @return the nome
@@ -219,6 +225,62 @@ public class Fornecedor {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * @return the inicio
+     */
+    public String getInicio() {
+        return inicio;
+    }
+
+    /**
+     * @param inicio the inicio to set
+     */
+    public void setInicio(String inicio) {
+        this.inicio = inicio;
+    }
+
+    /**
+     * @return the termino
+     */
+    public String getTermino() {
+        return termino;
+    }
+
+    /**
+     * @param termino the termino to set
+     */
+    public void setTermino(String termino) {
+        this.termino = termino;
+    }
+
+    /**
+     * @return the descricao
+     */
+    public String getDescricao() {
+        return descricao;
+    }
+
+    /**
+     * @param descricao the descricao to set
+     */
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    /**
+     * @return the imagem
+     */
+    public String getImagem() {
+        return imagem;
+    }
+
+    /**
+     * @param imagem the imagem to set
+     */
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
    
     

@@ -10,17 +10,32 @@
     padding-bottom: 20px;
 }
 
-#complemento {
-    margin-left: 16%;
-}
 
 #btn {
     border-radius: 40px;
 }
 
 .btn2 {
-    margin-left: 75%;
-    margin-bottom: 10px;
+    margin-bottom: 10px;    
+}
+
+#cancelarCadCliente{
+    margin-right: 10px!important;
+    border-right: 1px solid #00000073;
+    border-bottom: 1px solid #00000073;
+}
+
+#cancelarCadCliente:hover {
+    background: #8080809e;
+}
+
+.btn-success{
+    border-right: 1px solid #1d7531!important;
+    border-bottom: 1px solid #1d7531!important;
+}
+
+.custom-control-label::before {
+    border: 1px solid black;  
 }
 
 #senhaLogin {
@@ -66,14 +81,14 @@ body {
     width: 0px;
     display: block;
     float: left;
-}
+}   
 
 .logo img{
     width: 90px;
 }
 
 nav {
-    background: rgb(243, 223, 143);
+      background: #a0cce9;
     color: darkblue;
     opacity: 0.5;
 }
@@ -90,12 +105,7 @@ nav {
     }
 }
 
-@media only screen and (max-width: 769px) {
 
-    .btn2 {
-        margin-left: 60%;
-    } 
-}
 
 /*JANELA MODAL*/
 .modal {
@@ -121,7 +131,11 @@ nav {
     width: 60%!important;
 }
 
-.modal-content p{
+#modalSenha .modal-content p{
+    text-align: center;
+}
+
+.modal-content h2{
     text-align: center;
 }
 
@@ -139,4 +153,7 @@ nav {
     text-decoration: none;
     cursor: pointer;
 }  
-
+.btn-success {
+    background-color: #cf9bcc!important;
+    border-color: #cf9bcc!important;
+}

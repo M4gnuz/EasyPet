@@ -21,12 +21,20 @@ import javax.servlet.http.HttpServletResponse;
  * @author glima
  */
 public class EditarProdutoServlet extends HttpServlet {
+<<<<<<< HEAD
 
     public void converteString(String string) throws UnsupportedEncodingException {
         String encodedWithISO88591 = string;
         String decodedToUTF8 = new String(encodedWithISO88591.getBytes("ISO-8859-1"), "UTF-8");
     }
     Produto produto = new Produto();
+=======
+    public void converteString(String string) throws UnsupportedEncodingException{
+            String encodedWithISO88591 = string;
+            String decodedToUTF8 = new String(encodedWithISO88591.getBytes("ISO-8859-1"), "UTF-8");
+            }
+     Produto produto = new Produto();
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,6 +50,7 @@ public class EditarProdutoServlet extends HttpServlet {
         response.setContentType("text/html;charset=ISO-8859-1");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+<<<<<<< HEAD
             String opcao = request.getParameter("opcao");
             if (opcao.equals("cancelar")) {
                 response.sendRedirect("jsp/MeusProdutos.jsp");
@@ -81,6 +90,40 @@ public class EditarProdutoServlet extends HttpServlet {
                 out.print("alert('Alteração Concluída!')");
                 response.sendRedirect("jsp/MeusProdutos.jsp");
             }
+=======
+            String preco = request.getParameter("precoA");
+            String converte = "";
+            float valor = 0;
+            
+            for (int i = 0; i < preco.length(); i++) {
+                preco.charAt(i);
+                if (preco.charAt(i) != '.' && preco.charAt(i) != ',') {
+                    converte += preco.charAt(i);
+                }
+                if (preco.charAt(i) == ',') {
+                    converte += ".";
+                }
+            }
+            valor = Float.parseFloat(converte);
+            //produto.setImagem(request.getParameter("customFile"));
+            produto.setNome(request.getParameter("titulo"));
+             converteString(request.getParameter("titulo"));
+            produto.setDescricao(request.getParameter("descricao"));
+            produto.setContraIndicacao(request.getParameter("contra"));
+            produto.setPreco(valor);
+            produto.setEstoque(Integer.parseInt(request.getParameter("estoque")));
+            produto.setCategoria(request.getParameter("categoria"));
+            
+            int id = 0;
+            for (Cookie cookie : request.getCookies())
+            if (cookie.getName().equals("idProduto"))                
+                        id = Integer.parseInt(cookie.getValue());
+            produto.setId(id);
+            ProdutoDAO.alteraProduto(produto);
+            
+            out.print("alert('Alteração Concluída!')");
+            response.sendRedirect("jsp/MeusProdutos.jsp");
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         }
     }
 

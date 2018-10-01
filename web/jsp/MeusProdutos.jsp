@@ -4,9 +4,13 @@
     Author     : AsColaco
 --%>
 
+<<<<<<< HEAD
 <%
     String status = request.getParameter("status");
 %>
+=======
+
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 <%@page import="classes.Fornecedor"%>
 <%@page import="dao.FornecedorDAO"%>
 <%@page import="java.util.List"%>
@@ -44,6 +48,7 @@
     </head>
     <body id="tudo">
 
+<<<<<<< HEAD
         
 
         <%@include file="cabecalho.jsp"%>
@@ -62,6 +67,23 @@
                 imagem= novo.getImagem();
             }
         %>
+=======
+        <%
+            int id = 0;
+            String nome = "";
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals("idFornecedor")) {
+                    id = Integer.parseInt(cookie.getValue());
+
+                }
+                Fornecedor novo = FornecedorDAO.getFornecedor(id);
+                nome = novo.getNome();
+            }
+        %>
+
+        <%@include file="cabecalho.jsp"%>
+
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         <div class="container">
             <div id="petlogo" class="principal2  col-xs-12 col-sm-4 col-md-4">
                 <h4><%=nome%></h4>
@@ -83,13 +105,18 @@
             <div class="form-group input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
                 <input name="consulta" id="txt_consulta" placeholder="Consultar" type="text" class="form-control">
+<<<<<<< HEAD
                 <input type="button" id="btnConsulta" value="Consultar">                
+=======
+                <input type="button" id="btnConsulta" value="Consultar">
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             </div>
             
             --><hr>
             
             <div>
                 <div class="col-md-8">
+<<<<<<< HEAD
                     <!--
                     <div class="filtro-meus-produtos">
                         <h2>Categoria </h2>
@@ -133,9 +160,46 @@
                     </select>
                     -->
                 </div>
+=======
+                    <div class="filtro-meus-produtos">
+                        <h2>Categoria </h2>
+                    </div>    
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">
+                            Rações
+                        </label>
+                        <label>
+                            <input type="checkbox" value="">
+                            Brinquedos
+                        </label>
+                        <label>
+                            <input type="checkbox" value="">
+                            Higiene
+                        </label>
+                        <label>
+                            <input type="checkbox" value="">
+                            Acessórios
+                        </label>
+
+                        <!--<button type="button" class="btn btn-primary">Cadastrar Produto</button>-->
+                    </div>
+                </div>
+                <div class="col-md-4" >
+                    <select class="form-control form-control-sm">
+                        <option>Ordenar</option>
+                        <option>Menor Preço</option>
+                        <option>Maior Preço</option>
+                        <option>Nome (a-z)</option>
+                        <option>Nome (z-a)</option>
+                    </select>
+                </div>
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
             </div>
             <br>
+<<<<<<< HEAD
                 <table class="table" id="tabela_busca_meus_produtos">
                     <thead class="thead-dark">
                         <tr>
@@ -179,11 +243,53 @@
                     </tbody>                
                 </table>
             
+=======
+
+            <table class="table" id="tabela_busca_meus_produtos">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome do Produto</th>
+                        <th scope="col">Estoque</th>
+                        <th scope="col">Preço</th>
+                        <th colspan="3">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                    <%
+                        List<Produto> lista = new ArrayList();
+                        for (Cookie cookie : request.getCookies()) {
+                            if (cookie.getName().equals("idFornecedor")) {
+                                id = Integer.parseInt(cookie.getValue());
+                            }
+                        }
+                        ProdutoDAO.getProdutos(lista, id, 0);
+                        for (int contador = 0; contador < lista.size(); contador++) {
+                            Produto produto = lista.get(contador);
+                            out.print("<tr>"
+                                    + "<th scope='row'><img src='../ResourcesIm/logoSite.png' width='100px'></th>"
+                                    + "<td>" + produto.getId() + "</td>"
+                                    + "<td>" + produto.getNome() + "</td>"
+                                    + "<td>" + produto.getEstoque() + "</td>"
+                                    + "<td>" + produto.getPreco() + "</td>"
+                                    + "<td><a href='../Controle?id=" + produto.getId() + "&action=del 'id='excluirProd" + contador
+                                    + "' name='botoes' class='fas fa-trash-alt' style='font-size:22px;'</a></td>"
+                                    + "<td><a href='../Controle?id=" + produto.getId() + "&action=alt' <i 'id='editarProd" + contador
+                                    + "' class='far fa-edit' style='font-size:22px;'></i></a></td>"
+                                    + "</tr>");
+                        }
+                    %>
+
+                </tbody>                
+            </table>
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             <br>
 
         </div> 
         <%@include file="rodape.jsp"%>      
 
+<<<<<<< HEAD
         <script type="text/javascript" charset="utf-8">
            <% if (status != null) {%>
             if (window.addEventListener) {
@@ -211,6 +317,18 @@
             /*produtos.sort(function(a,b) {
              return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
              });*/
+=======
+        <script type="text/javascript">
+            window.onload = function () {
+                document.getElementById("btnConsulta").onclick = function () {
+                    alert("PORRA");
+
+            <%
+
+            %>
+                };
+            };
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
         </script>
     </body>

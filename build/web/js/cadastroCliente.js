@@ -35,6 +35,7 @@ window.onload = function () {
         $(this).val($(this).val().replace(regex, ''));
     });
 
+<<<<<<< HEAD
     /*
      $(function () {
      $("#inputData").datepicker();
@@ -52,6 +53,24 @@ window.onload = function () {
     });
 
     function getEndereco() {    
+=======
+    $(function () {
+        $("#inputData").datepicker();
+    });
+
+
+    //COMPLETA ENDERECO
+
+    var regex = /^[0-9]{8}$/;
+
+    $(function () {
+        $(".cep").on("change", function () {
+            getEndereco();
+        });
+    });
+
+    function getEndereco() {
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $(".cep").attr("readonly", "readonly");
 
         var cep = $(".cep").val().replace(/\D/g, '');
@@ -60,9 +79,12 @@ window.onload = function () {
             $.get('https://viacep.com.br/ws/' + cep + '/json/', function (json) {
                 if (!("erro" in json)) {
                     var e = eval(json);
+<<<<<<< HEAD
                     console.log("entrou no if ");
                     console.log(e);
 
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
                     $("#inputEndereco").val(e.logradouro);
                     $("#inputBairro").val(e.bairro);
@@ -71,6 +93,7 @@ window.onload = function () {
                     $("#inputEndereco").attr("readonly", "readonly");
                     $("#inputBairro").attr("readonly", "readonly");
                     $("#inputCidade").attr("readonly", "readonly");
+<<<<<<< HEAD
                     
                     $("#inputCep").css("border", "1px solid #ced4da");
 
@@ -85,6 +108,15 @@ window.onload = function () {
         } else {
             $("#inputCep").val("");
             //limpar();
+=======
+
+                } else {
+                    limpar();
+                }
+            });
+        } else {
+            limpar();
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         }
 
         $(".cep").removeAttr("readonly");
@@ -143,7 +175,11 @@ function validaCampo() {
     if (!reg.test($("#inputEmail").val())) {
         $("#inputEmail").css("border", "1px solid red");
         $("#inputEmail").focus();
+<<<<<<< HEAD
         alert("Por favor, preencher um email válido");
+=======
+        alert("Por favor, preencher um email valido");
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         return false;
     }
     $("#inputData").css("border", "1px solid #ced4da");
@@ -166,7 +202,11 @@ function validaCampo() {
     if (anoAtual - parseInt($('#inputData').val().replace(regData, "").substring(4, 8)) < 18) {
         $("#inputData").datepicker("hide");
         //$("#inputData").val('');
+<<<<<<< HEAD
         alert('É necessário ser maior de idade para se cadastrar');
+=======
+        alert('E necessario ser maior de idade para se cadastrar');
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         return false;
     }
 
@@ -225,7 +265,11 @@ function validaCampo() {
     if ((Resto == 10) || (Resto == 11))
         Resto = 0;
     if (Resto != parseInt(strCPF.substring(9, 10))) {
+<<<<<<< HEAD
         alert("Por favor, digite um CPF válido");
+=======
+        alert("Por favor digite um CPF valido");
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCpf").focus();
         return false;
     }
@@ -238,7 +282,11 @@ function validaCampo() {
     if ((Resto == 10) || (Resto == 11))
         Resto = 0;
     if (Resto != parseInt(strCPF.substring(10, 11))) {
+<<<<<<< HEAD
         alert("Por favor, digite um CPF válido");
+=======
+        alert("Por favor digite um CPF válido");
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCpf").focus();
         return false;
     }
@@ -271,7 +319,7 @@ function validaCampo() {
     $("#inputCep").css("border", "1px solid #ced4da");
 
     if ($("#inputEnd").val() == "") {
-        alert("Por favor, preencher o campo endereço");
+        alert("Por favor, preencher o campo endereco");
         $("#inputEnd").css("border", "1px solid red");
         $("#inputEnd").focus();
         return false
@@ -283,7 +331,7 @@ function validaCampo() {
     $("#inputEnd").css("border", "1px solid #ced4da");
 
     if ($("#inputNumero").val() == "") {
-        alert("Por favor, preencher o campo número");
+        alert("Por favor, preencher o campo numero");
         $("#inputNumero").css("border", "1px solid red");
         $("#inputNumero").focus();
         return false
@@ -315,14 +363,18 @@ function validaCampo() {
     if ($("#exampleCheck1").is(":checked")) {
         checado = true;
     } else {
-        alert("É necessário confirmar os termos de uso para prosseguir");
+        alert("E necessário confirmar os termos de uso para prosseguir");
         return false;
     }
 
     //valida se a senha tem no mínimo 8 caracteres
 
     if ($('#inputSenha').val().trim().length < 8) {
+<<<<<<< HEAD
         alert('A senha deverá conter no minimo 8 caracteres');
+=======
+        alert('A senha devera ter no minimo 8 caracteres');
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         return false;
     }
 

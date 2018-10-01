@@ -5,8 +5,13 @@
 <% String validacao = request.getParameter("status");%>
 <html>
     <head>
+<<<<<<< HEAD
 
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+=======
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         <title>CADASTRO CLIENTE</title>
         <link rel="stylesheet" type="text/css" href="../css/cadastroFornecedor.css"> 
         <link rel="stylesheet" href="../Source Files/jquery-ui.min.css">

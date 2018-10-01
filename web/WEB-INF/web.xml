@@ -32,6 +32,7 @@
         <servlet-name>upload</servlet-name>
         <servlet-class>servlet.upload</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>LoginFornecedorServlet</servlet-name>
         <servlet-class>servlet.LoginFornecedorServlet</servlet-class>
@@ -44,6 +45,8 @@
         <servlet-name>CadastroServicosServlet</servlet-name>
         <servlet-class>servlet.CadastroServicosServlet</servlet-class>
     </servlet>
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     <servlet-mapping>
         <servlet-name>Controle</servlet-name>
         <url-pattern>/Controle</url-pattern>
@@ -60,6 +63,7 @@
         <servlet-name>upload</servlet-name>
         <url-pattern>/upload</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>LoginFornecedorServlet</servlet-name>
         <url-pattern>/LoginFornecedorServlet</url-pattern>
@@ -72,6 +76,8 @@
         <servlet-name>CadastroServicosServlet</servlet-name>
         <url-pattern>/CadastroServicosServlet</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     <session-config>
         <session-timeout>
             30

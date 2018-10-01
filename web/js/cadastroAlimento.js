@@ -2,7 +2,11 @@ window.onload = function () {
 
 
     $(function () {
+<<<<<<< HEAD
         var maxLength = '-0.000,00'.length;
+=======
+        var maxLength = '-0.000.000,00'.length;
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
         $("#inputPrecoA").maskMoney({
             allowNegative: true,
@@ -11,15 +15,19 @@ window.onload = function () {
             affixesStay: false
         }).attr('maxlength', maxLength).trigger('mask.maskMoney');
     });
+<<<<<<< HEAD
     
     $("#inputEstoqueA").on("input", function () {
         var regex = /[^0-9]/g;
         $(this).val($(this).val().replace(regex, ''));
     });
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
 
     $("#inputDataV").mask("99/99/9999");
 
+<<<<<<< HEAD
 /*
      comentei o calendario
     $(function () {
@@ -37,19 +45,45 @@ window.onload = function () {
 
 
 };
+=======
+    $(function () {
+        $("#inputDataV").datepicker();
+    });
+
+
+//$(function () {
+//    $("#anunciar_alimento").click(function () {
+//        if (validaCampo() == true) {
+//            $("#formulario").submit();
+//        }
+//    });
+//});
+
+
+}
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
 function validaCampo() {
 
     //Valida campos em branco
+<<<<<<< HEAD
     if ($("#inputTitulo").val() === "") {
         alert("Por favor, preencher o campo título do produto");
         $("#inputTitulo").css("border", "1px solid red");
         $("#inputTitulo").focus();
         return false;
+=======
+    if ($("#inputTitulo").val() == "") {
+        alert("Por favor, preencher o campo título do produto");
+        $("#inputTitulo").css("border", "1px solid red");
+        $("#inputTitulo").focus();
+        return false
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     }
 
     $("#inputTitulo").css("border", "1px solid #ced4da");
 
+<<<<<<< HEAD
     /*if ($("#contraindicacao").val() === "") {
      alert("Por favor, preencher a descrição");
      $("#contraindicacao").css("border", "1px solid red");
@@ -97,32 +131,75 @@ function validaCampo() {
         $("#inputEstoqueA").css("border", "1px solid red");
         $("#inputEstoqueA").focus();
         return false;
+=======
+    if ($("#txtIngredientes").val() == "") {
+        alert("Por favor, preencher o campo ingredientes");
+        $("#txtIngredientes").css("border", "1px solid red");
+        $("#txtIngredientes").focus();
+        return false
+    }
+
+    $("#txtIngredientes").css("border", "1px solid #ced4da");
+
+    if ($("#inputPrecoA").val() == "") {
+        alert("Por favor, preencher o campo preço");
+        $("#inputPrecoA").css("border", "1px solid red");
+        $("#inputPrecoA").focus();
+        return false
+    }
+
+    $("#inputPrecoA").css("border", "1px solid #ced4da");
+
+    if ($("#inputEstoqueA").val() == "") {
+        alert("Por favor, preencher o campo estoque");
+        $("#inputEstoqueA").css("border", "1px solid red");
+        $("#inputEstoqueA").focus();
+        return false
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     }
 
     $("#inputEstoqueA").css("border", "1px solid #ced4da");
 
 
+<<<<<<< HEAD
     if ($("#inputDataV").val() === "") {
         alert("Por favor, preencher o campo título da data do vencimento");
         $("#inputDataV").css("border", "1px solid red");
         $("#inputDataV").focus();
         return false;
+=======
+    if ($("#inputDataV").val() == "") {
+        alert("Por favor, preencher o campo título do data do vencimento");
+        $("#inputDataV").css("border", "1px solid red");
+        $("#inputDataV").focus();
+        return false
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     }
 
     $("#inputDataV").css("border", "1px solid #ced4da");
 
+<<<<<<< HEAD
    // produto vencido
+=======
+    // censura de idade 18
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     var data = new Date();
     var anoAtual = data.getFullYear();
     var regData = /([^\d])+/g;
 
+<<<<<<< HEAD
 /*
     if (anoAtual - parseInt($('#inputDataV').val().replace(regData, "").substring(4, 8)) >= 0) {
       //  $("#inputDataV").datepicker("hide");
+=======
+    if (anoAtual - parseInt($('#inputData').val().replace(regData, "").substring(4, 8)) >= 0) {
+        $("#inputData").datepicker("hide");
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         //$("#inputData").val('');
         alert('A data do produto consta vencido, por favor, cadastrar outro produto com um vencimento válido');
         return false;
     }
+<<<<<<< HEAD
 */ 
     
     if ($("#inputGroupSelect02").prop("selectedIndex")===0) {
@@ -130,11 +207,23 @@ function validaCampo() {
         $("#inputGroupSelect02").css("border", "1px solid red");
         $("#inputGroupSelect02").focus();
         return false;
+=======
+
+
+    if ($("#inputGroupSelect02").val() == "") {
+        alert("Por favor, selecione uma categoria");
+        $("#inputGroupSelect02").css("border", "1px solid red");
+        $("#inputGroupSelect02").focus();
+        return false
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     }
 
     $("#inputGroupSelect02").css("border", "1px solid #ced4da");
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     return true;
 }
 

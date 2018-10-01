@@ -47,9 +47,14 @@ public class LoginFornecedorServlet extends HttpServlet {
             if (email.equals(novo.getEmail())) {
                 if (novo.getSenha().equals(senha)) {
                    response.addCookie(new Cookie("idFornecedor", novo.getId()+""));
+<<<<<<< HEAD
                    response.addCookie(new Cookie("email", email+"")); 
                    response.addCookie(new Cookie("nivel", "2"));
                     response.sendRedirect("jsp/MeusProdutos.jsp?status=Login");
+=======
+                   response.addCookie(new Cookie("email", email+""));                   
+                   response.sendRedirect("jsp/MeusProdutos.jsp");
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                 }
             } else {
                  out.print("<script type=\'text/javascript\'>");

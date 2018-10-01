@@ -48,6 +48,7 @@ public class ClienteDAO {
         }
     }
     
+<<<<<<< HEAD
     public static String confirmaSenha(Cliente cliente){
         String senha = "";
         try {
@@ -84,10 +85,13 @@ public class ClienteDAO {
         }
     }
     
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     public static void alteraCliente(Cliente cliente){
         try {
             Connection con = Conecta.getConexao();
             String sql = "UPDATE tb_cliente SET nome=?, sobrenome=?,"
+<<<<<<< HEAD
                     + "senha=?, sexo=?, telefone=?, endereco=?, numero_rua=?, "
                     + "cidade=?, bairro=?, complemento=?, cep=? WHERE id_cliente=?";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -103,6 +107,24 @@ public class ClienteDAO {
             ps.setString(10, cliente.getComplemento() + "");
             ps.setString(11, cliente.getCep());
             ps.setInt(12, cliente.getId());
+=======
+                    + "dt_nascimento=?, senha=?, sexo=?, telefone=?, endereco=?, numero_rua=?, "
+                    + "cidade=?, bairro=?, complemento=?, cep=? WHERE id=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getNome() + "");
+            ps.setString(2, cliente.getSobreNome() + "");
+            ps.setString(3, cliente.getDtNascimento() + "");
+            ps.setString(4, cliente.getSenha() + "");
+            ps.setString(5, cliente.getSexo() + "");
+            ps.setString(6, cliente.getTelefone() + "");
+            ps.setString(7, cliente.getEndereco() + "");
+            ps.setString(8, cliente.getNrRua() + "");
+            ps.setString(9, cliente.getCidade() + "");
+            ps.setString(10, cliente.getBairro() + "");
+            ps.setString(11, cliente.getComplemento() + "");
+            ps.setString(12, cliente.getCep());
+            ps.setInt(13, cliente.getId());
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             ps.execute();
             ps.close();
             con.close();
@@ -209,6 +231,7 @@ public class ClienteDAO {
 
     }
 
+<<<<<<< HEAD
   
         public static Cliente getCliente(int id) {
         Cliente novo = new Cliente();
@@ -217,6 +240,14 @@ public class ClienteDAO {
             String sql = "SELECT * FROM tb_cliente WHERE id_cliente = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
+=======
+    public static Cliente getCliente(Cliente cliente) {
+        Cliente novo = new Cliente();
+        try {
+            Connection con = Conecta.getConexao();
+            String sql = "SELECT * FROM  tb_cliente";
+            PreparedStatement ps = con.prepareStatement(sql);
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 novo.setNome(rs.getString("nome"));
@@ -233,6 +264,10 @@ public class ClienteDAO {
                 novo.setBairro(rs.getString("bairro"));
                 novo.setComplemento(rs.getString("complemento"));
                 novo.setCep(rs.getString("cep"));
+<<<<<<< HEAD
+=======
+                novo.setId(rs.getInt("id_cliente"));
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             }
             rs.close();
             ps.close();

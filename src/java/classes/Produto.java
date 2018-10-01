@@ -12,7 +12,10 @@ package classes;
 public class Produto {
     
     private int id;
+<<<<<<< HEAD
     private int idFornecedor;
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     private String imagem;
     private String nome;
     private String descricao;
@@ -24,8 +27,12 @@ public class Produto {
     public Produto(){}
     
     public Produto(String imagem, String nome, String descricao, String contraIndicacao,
+<<<<<<< HEAD
             float preco, int estoque, String categoria, int idFornecedor){
         this.idFornecedor = idFornecedor;
+=======
+            float preco, int estoque, String categoria){
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         this.imagem = imagem;
         this.nome = nome;
         this.descricao = descricao;
@@ -35,6 +42,7 @@ public class Produto {
         this.categoria = categoria;
     }
     
+<<<<<<< HEAD
     public int getIdFornecedor(){
         return this.idFornecedor;
     }
@@ -43,6 +51,8 @@ public class Produto {
         this.idFornecedor = id;
     }
     
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     public String getImagem(){
         return this.imagem;
     }

@@ -19,8 +19,13 @@ public class Alimento extends  Produto{
     
     public Alimento(String imagem, String nome, String descricao, String contraIndicacao, 
             float preco, int estoque, String categoria, String nomeIngrediente, int qtdIngrediente,
+<<<<<<< HEAD
             String dtVencimento, int idFornecedor){
         super(imagem, nome, descricao, contraIndicacao, preco, estoque, categoria, idFornecedor);
+=======
+            String dtVencimento){
+        super(imagem, nome, descricao, contraIndicacao, preco, estoque, categoria);
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         this.nomeIngrediente = nomeIngrediente;        
         this.dtVencimento = dtVencimento;
     }

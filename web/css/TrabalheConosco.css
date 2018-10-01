@@ -1,6 +1,9 @@
 body {
     background: url(../ResourcesIm/gato.jpg) center center no-repeat fixed;
+<<<<<<< HEAD
     opacity: 0.8;
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -9,22 +12,37 @@ body {
 }
 
 .principal {
+<<<<<<< HEAD
     margin-left: 25%;
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     height: 250px;
     font-weight: bold;  
     border-radius: 5px;  
     color: black;
     float: left;
     margin-bottom: 45px;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     margin-top: 5px;
     font-size: 14pt;
     border-color: #cf9bcc!important;
     
 }
 .principalForm {
+<<<<<<< HEAD
     height: 500px;
     width: 250px;   
     font-weight: bold;    
+=======
+    height: 400px;
+    width: 250px;
+    
+    font-weight: bold;  
+    
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     color: black;
     float: left;
     margin-bottom: 45px;
@@ -51,7 +69,10 @@ body {
 #tudo{      
     
     background-color: rgb(226, 226, 226)!important;
+<<<<<<< HEAD
     opacity: 0.8;  
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     
 }
 .cadastro {
@@ -64,9 +85,18 @@ body {
     border-radius: 5px;  
     color: black;
     float: left;
+<<<<<<< HEAD
     width: 100%;     
     cursor: pointer;
 
+=======
+    width: 100%;    
+    margin-top: -1px;
+    
+    cursor: pointer;
+    
+    margin-left: 15px;
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 }
 .tituloEC{
     margin-left: 350px;
@@ -83,14 +113,20 @@ label{
 .enviarCurriculo{
     width: 300px !important;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 #btn_enviarEC{
     margin-top: 20px;
     margin-left: 100px; 
     color: darkblue !important;
     background-color: #cf9bcc !important;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 #borda{
     border: 3px;
 }

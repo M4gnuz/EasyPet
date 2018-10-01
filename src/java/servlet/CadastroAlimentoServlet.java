@@ -14,7 +14,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+<<<<<<< HEAD
 import java.text.Normalizer;
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -39,6 +42,7 @@ public class CadastroAlimentoServlet extends HttpServlet {
     public void converteString(String string) throws UnsupportedEncodingException{
             String encodedWithISO88591 = string;
             String decodedToUTF8 = new String(encodedWithISO88591.getBytes("ISO-8859-1"), "UTF-8");
+<<<<<<< HEAD
             }  
      
      
@@ -47,6 +51,9 @@ public class CadastroAlimentoServlet extends HttpServlet {
 	strSemAcentos = strSemAcentos.replaceAll("[^\\p{ASCII}]", "");
 	return strSemAcentos;
 }
+=======
+            }
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
     Alimento alimento = new Alimento();
 
@@ -65,6 +72,7 @@ public class CadastroAlimentoServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
+<<<<<<< HEAD
            /* String opcao = request.getParameter("opcao");
             System.out.println(request.getParameter("opcao"));
             if (opcao.equals("salvar")) {
@@ -82,6 +90,8 @@ public class CadastroAlimentoServlet extends HttpServlet {
             String dataCerta = ano + mes + dia;
             alimento.setDtVencimento(dataCerta);
             
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             String preco = request.getParameter("precoA");
             String converte = "";
             float valor = 0;
@@ -102,10 +112,24 @@ public class CadastroAlimentoServlet extends HttpServlet {
             converteString(request.getParameter("titulo"));
             alimento.setDescricao(request.getParameter("descricao"));
             alimento.setContraIndicacao(request.getParameter("contra"));
+<<<<<<< HEAD
             alimento.setNomeIngrediente(request.getParameter("ingredientes"));            
+=======
+            alimento.setNomeIngrediente(request.getParameter("nome"));            
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             alimento.setPreco(valor);
             alimento.setEstoque(Integer.parseInt(request.getParameter("estoque")));            
             alimento.setCategoria(request.getParameter("categoria"));
+<<<<<<< HEAD
+=======
+
+            int id = 0;
+            for (Cookie cookie : request.getCookies()) {
+                if (cookie.getName().equals("idFornecedor")) {
+                    id = Integer.parseInt(cookie.getValue());
+                }
+            }
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
             int id = 0;
             for (Cookie cookie : request.getCookies()) {
@@ -123,10 +147,19 @@ public class CadastroAlimentoServlet extends HttpServlet {
             }else{
                 //ADICIONA PRODUTO
             AlimentoDAO.addAlimento(alimento, id);
+<<<<<<< HEAD
             //Produto novo = ProdutoDAO.getUltimoItem(id);
             System.out.print("MEU ID: " + alimento.getId());            
             response.sendRedirect("jsp/cadastroDeProdutosImagem.jsp?status=OK&id="+alimento.getId());
             }   
+=======
+            out.print("<script type=\'text/javascript\'>");
+            out.print("alert('Produto Cadastrado com Sucesso!');");
+            out.println("location='jsp/MeusProdutos.jsp';");
+            out.print("</script>");
+
+            response.sendRedirect("jsp/MeusProdutos.jsp");
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         }
     }
 

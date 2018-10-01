@@ -4,8 +4,11 @@
     Author     : AsColaco
 --%>
 
+<<<<<<< HEAD
 <%@page import="classes.Cliente"%>
 <%@page import="dao.ClienteDAO"%>
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +17,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+<<<<<<< HEAD
          <% 
         int id = 0;
             for (Cookie cookie : request.getCookies()) {
@@ -25,6 +29,9 @@
            
             Cliente novo = ClienteDAO.getCliente(id);
         %>
+=======
+
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         <nav id="nav-principal" class="navbar navbar-expand-lg  border border-dar rounded shadow p-3 mb-3">
             <div class="logo">
                 <h3>EasyPet</h3>
@@ -33,10 +40,22 @@
             <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
                     <div class="dropdown">
+<<<<<<< HEAD
                         <button id="Comprar" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comprar</button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="PaginadeProdutos.jsp">Produtos</a>
                             <a class="dropdown-item" href="#">Serviços</a>
+=======
+                        <button id="meusProdutosFornecedor" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="MeusProdutos.jsp">Meus Produtos</a>
+                        </div>
+                    </div>    
+                    <div class="dropdown">
+                        <button id="meusServicosFornecedor" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Meus Serviços </a>
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                         </div>
                     </div>
                     <div class="dropdown">
@@ -62,6 +81,7 @@
                     <div class="dropdown">
                         <button id="menuCliente" class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-alt"></i>
+<<<<<<< HEAD
                             <% out.print(novo.getNome()); %>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -72,6 +92,16 @@
                             <a class="dropdown-item" href="#">Acompanhar meus agendamentos</a>
                             <a class="dropdown-item" href="#">Assinaturas</a>   
                             <a class="dropdown-item" href="../index.html">Sair</a> 
+=======
+                            Pessoa
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Editar meu Perfil</a>
+                            <a class="dropdown-item" href="#">Gerenciar meus Pets</a>
+                            <a class="dropdown-item" href="#">Acompanhar meus pedidos</a>
+                            <a class="dropdown-item" href="#">Acompanhar meus agendamentos</a>
+                            <a class="dropdown-item" href="#">Assinaturas</a>                          
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                         </div>
                     </div>
                 </div>

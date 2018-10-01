@@ -113,6 +113,7 @@ public class JavaMailApp {
                   throw new RuntimeException(e);
             }
       }
+<<<<<<< HEAD
         
         
     public static void enviarEmailTrabalheConosco(String nome, String email, String areaInteresse, String telefone) {
@@ -162,4 +163,6 @@ public class JavaMailApp {
                   throw new RuntimeException(e);
             }
       }
+=======
+>>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 }

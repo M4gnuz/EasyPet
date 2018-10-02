@@ -19,13 +19,8 @@
                         <div class="card-header" id=" headingOne">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="False" aria-controls="collapseOne"
-<<<<<<< HEAD
                                         onclick="window.location.href = 'Loja.jsp'">
                                     Home - Minha Loja
-=======
-                                        onclick="window.location.href = 'MeusProdutos.jsp'">
-                                    Home - Meus produtos
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                                 </button>
                             </h5>
                         </div>
@@ -52,11 +47,7 @@
                                     <li>
                                         <a link href="MeusProdutos.jsp"> Gerenciar Produtos</a>
                                     </li>
-<<<<<<< HEAD
 
-=======
-                                   
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                                     <!--
                                     <li>
                                         <a link href=""> Categorias</a>
@@ -123,26 +114,17 @@
                                 </button>
                             </h5>
                         </div>
-<<<<<<< HEAD
                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-=======
-                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                             <div class="card-body">
                                 <ul>
                                     <li>
                                         <a id="click" link href="MeusDadosFornecedor.jsp">Alterar Dados </a>
                                     </li>
-<<<<<<< HEAD
                                     <li>
                                         <a id="click" link href="TrocaSenhaFornecedor.jsp">Trocar Senha</a>
                                     </li>
 
 
-=======
-                                   
-                                   
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                                 </ul>
                             </div>
                         </div>

@@ -10,10 +10,7 @@ import dao.ProdutoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-<<<<<<< HEAD
 import java.text.Normalizer;
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -32,15 +29,12 @@ public class CadastroProdutoServlet extends HttpServlet {
             String encodedWithISO88591 = string;
             String decodedToUTF8 = new String(encodedWithISO88591.getBytes("ISO-8859-1"), "UTF-8");
             }
-<<<<<<< HEAD
      
      public String removeAcentos(final String str) {
 	String strSemAcentos = Normalizer.normalize(str, Normalizer.Form.NFD);
 	strSemAcentos = strSemAcentos.replaceAll("[^\\p{ASCII}]", "");
 	return strSemAcentos;
 }
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
     Produto produto = new Produto();
 
@@ -59,7 +53,6 @@ public class CadastroProdutoServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-<<<<<<< HEAD
             /*String opcao = request.getParameter("opcao");
             if (opcao.equals("cancelar")) {
                 response.sendRedirect("jsp/MeusProdutos.jsp");
@@ -70,11 +63,6 @@ public class CadastroProdutoServlet extends HttpServlet {
             String converte = "";            
             float valor = 0;
             //VALIDA PREÇO
-=======
-            String preco = request.getParameter("precoA");
-            String converte = "";
-            float valor = 0;
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             for (int i = 0; i < preco.length(); i++) {
                 preco.charAt(i);
                 if (preco.charAt(i) != '.' && preco.charAt(i) != ',') {
@@ -84,23 +72,13 @@ public class CadastroProdutoServlet extends HttpServlet {
                     converte += ".";
                 }
             }           
-<<<<<<< HEAD
             valor = Float.parseFloat(converte);            
-=======
-            valor = Float.parseFloat(converte);
-            //produto.setImagem(request.getParameter("customFile"));
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             produto.setNome(request.getParameter("titulo"));
             converteString(request.getParameter("titulo"));
             produto.setDescricao(request.getParameter("descricao"));
             converteString(request.getParameter("descricao"));
             produto.setContraIndicacao(request.getParameter("contra"));
-<<<<<<< HEAD
             converteString(request.getParameter("contra"));      
-=======
-            converteString(request.getParameter("contra"));
-      
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             produto.setPreco(valor);
             produto.setEstoque(Integer.parseInt(request.getParameter("estoque")));
             produto.setCategoria(request.getParameter("categoria"));
@@ -112,7 +90,6 @@ public class CadastroProdutoServlet extends HttpServlet {
                     id = Integer.parseInt(cookie.getValue());
                 }
             }            
-<<<<<<< HEAD
             
             //VERIFICA SE JA EXISTE PRODUTO DO MESMO TÍTULO
             String semAct = removeAcentos(produto.getNome());
@@ -129,11 +106,6 @@ public class CadastroProdutoServlet extends HttpServlet {
             System.out.print("MEU ID: " + produto.getId());            
             response.sendRedirect("jsp/cadastroDeProdutosImagem.jsp?status=OK&id="+produto.getId());
             } 
-=======
-            ProdutoDAO.addProduto(produto, id);
-            out.print("alert('Produto Cadastrado com Sucesso!')");    
-            response.sendRedirect("jsp/MeusProdutos.jsp");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         }
     }
 

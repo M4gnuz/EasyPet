@@ -12,7 +12,6 @@
         <title>Como Pedir</title>
         <link rel="stylesheet" type="text/css" href="../css/termosECondicoes.css">    
         <link rel="stylesheet" type="text/css" href="../css/rodape.css"> 
-<<<<<<< HEAD
          <% 
         int n = 0;
             for (Cookie cookie : request.getCookies()) {
@@ -28,9 +27,6 @@
                 out.print("<link rel='stylesheet' type='text/css' href='../css/cabecalho.css'>");
             }
         %> 
-=======
-        <link rel="stylesheet" type="text/css" href="../css/cabecalho.css"> 
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
@@ -38,11 +34,7 @@
               crossorigin="anonymous">
     </head>
     <body id="tudo">
-<<<<<<< HEAD
         <%@include file="CabecalhoAlternado.jsp"%>
-=======
-        <%@include file="cabecalho.jsp"%>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         <div class="container">
             <h1 class="titulo">Como Pedir</h1>
             <div id="texto">

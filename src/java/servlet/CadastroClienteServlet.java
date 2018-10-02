@@ -86,26 +86,12 @@ public class CadastroClienteServlet extends HttpServlet {
             String dataCerta = ano + mes + dia;
             cliente.setDtNascimento(dataCerta);
 
-<<<<<<< HEAD
              //VALIDANDO CADASTRO CLIENTE no BANCO
             if (ClienteDAO.confereCPF(cliente)) {                
                 response.sendRedirect("jsp/CadastroCliente.jsp?filtro=Cpf");
 
             } else if(ClienteDAO.confereEmail(cliente)) {                
                 response.sendRedirect("jsp/CadastroCliente.jsp?filtro=Email");
-=======
-            if (ClienteDAO.confereCPF(cliente)) {
-                out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
-                out.println("alert('CPF JA CADASTRADO!')");
-                out.print("</script>");
-
-            } else if(ClienteDAO.confereEmail(cliente)) {
-                out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
-                out.println("alert('EMAIL JA CADASTRADO!')");
-                out.print("</script>");    
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
             } else {
                 ClienteDAO.addCliente(cliente);

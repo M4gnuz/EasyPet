@@ -31,11 +31,6 @@
         </div>
         <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group mr-2" role="group" aria-label="First group">
-<<<<<<< HEAD
-=======
-                <button type="button" id="meusProdutosFornecedor" class="btn btn-success">Produtos</button>
-                <button type="button" id="meusServicosFornecedor"class="btn  btn-success">Serviços</button>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                 <div class="dropdown">
                     <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Sobre
@@ -52,7 +47,6 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="FaleConosco.jsp">Fale Conosco</a>
-<<<<<<< HEAD
                         <a class="dropdown-item" href="TrabalheConosco_v2.jsp">Trabalhe Conosco</a>
                       <a class="dropdown-item" href="ComoPedir.jsp">Como Pedir</a>
                     </div>
@@ -68,13 +62,6 @@
                             <a class="dropdown-item" href="../index.html">Sair</a> 
                         </div>
                     </div>
-=======
-                      <a class="dropdown-item" href="#">Trabalhe Conosco</a>
-                      <a class="dropdown-item" href="ComoPedir.jsp">Como Pedir</a>
-                    </div>
-                  </div>
-                <button type="button" id="btn-sairFornecedor"class="btn  btn-success">Sair</button>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             </div>
         </div>
     </nav>

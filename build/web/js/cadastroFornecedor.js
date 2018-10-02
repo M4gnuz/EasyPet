@@ -5,21 +5,13 @@ window.onload = function () {
     $("#inputTelefone").mask("(99) 9999-9999?9");
     $("#inputCnpj").mask("99.999.999/9999-99");
     $("#inputData").mask("99/99/9999");
-<<<<<<< HEAD
     $("#inputHorarioInicio").mask("99:99");
     $("#inputHorarioFim").mask("99:99");
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
     //Valida campos só letra
     $("#inputNome").on("input", function () {
         var regex = /[0-9]/g;
         $(this).val($(this).val().replace(regex, ''));
-<<<<<<< HEAD
-    });
-
-    $("#inputBairro").on("input", function () {
-=======
     });
 
     $("#inputBairro").on("input", function () {
@@ -27,13 +19,6 @@ window.onload = function () {
         $(this).val($(this).val().replace(regex, ''));
     });
 
-    $("#inputCidade").on("input", function () {
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
-        var regex = /[0-9]/g;
-        $(this).val($(this).val().replace(regex, ''));
-    });
-
-<<<<<<< HEAD
     $("#inputCidade").on("input", function () {
         var regex = /[0-9]/g;
         $(this).val($(this).val().replace(regex, ''));
@@ -62,30 +47,6 @@ window.onload = function () {
         });
     });
 
-=======
-    //valida campos só numero
-
-    $("#inputNumero").on("input", function () {
-        var regex = /[^0-9]/g;
-        $(this).val($(this).val().replace(regex, ''));
-    });
-    
-    $(function() {            
-        $("#inputData").datepicker();
-    });
-    
-
-    //COMPLETA ENDERECO
-
-    var regex = /^[0-9]{8}$/;
-
-    $(function () {
-        $(".cep").on("change", function () {
-            getEndereco();
-        });
-    });
-
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     function getEndereco() {
         $(".cep").attr("readonly", "readonly");
 
@@ -103,7 +64,6 @@ window.onload = function () {
                     $("#inputEndereco").attr("readonly", "readonly");
                     $("#inputBairro").attr("readonly", "readonly");
                     $("#inputCidade").attr("readonly", "readonly");
-<<<<<<< HEAD
                     
                     $("#inputCep").css("border", "1px solid #ced4da");
 
@@ -118,15 +78,6 @@ window.onload = function () {
         } else {
             $("#inputCep").val("");
             //limpar();
-=======
-
-                } else {
-                    limpar();
-                }
-            });
-        } else {
-            limpar();
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         }
 
         $(".cep").removeAttr("readonly");
@@ -160,11 +111,7 @@ function validaCampo() {
     $("#inputNome").css("border", "1px solid #ced4da");
 
     if ($("#inputRazaoSocial").val() == "") {
-<<<<<<< HEAD
         var correcao = "Por favor, preencher o campo razão social";
-=======
-        var correcao = "Por favor, preencher o campo razão social";        
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         alert(correcao);
         $("#inputRazaoSocial").css("border", "1px solid red");
         $("#inputRazaoSocial").focus();
@@ -240,11 +187,7 @@ function validaCampo() {
             cnpj == "77777777777777" ||
             cnpj == "88888888888888" ||
             cnpj == "99999999999999") {
-<<<<<<< HEAD
         alert("Por favor, digite um CNPJ válido");
-=======
-        alert("Por favor digite um CNPJ válido");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCnpj").focus();
         return false;
     }
@@ -263,11 +206,7 @@ function validaCampo() {
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
     if (resultado != digitos.charAt(0)) {
-<<<<<<< HEAD
         alert("Por favor, digite um CNPJ válido");
-=======
-        alert("Por favor digite um CNPJ válido");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCnpj").focus();
         return false;
     }
@@ -283,11 +222,7 @@ function validaCampo() {
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
     if (resultado != digitos.charAt(1)) {
-<<<<<<< HEAD
         alert("Por favor, digite um CNPJ válido");
-=======
-        alert("Por favor digite um CNPJ válido");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCnpj").focus();
         return false;
     }

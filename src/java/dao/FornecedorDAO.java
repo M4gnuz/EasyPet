@@ -114,31 +114,6 @@ public class FornecedorDAO {
         }
     }
     
-    public static void alterarFornecedor(Fornecedor fornecedor){
-        try {
-            Connection con = Conecta.getConexao();
-            String sql = "UPDATE tb_fornecedor SET nome=?, razao=?, senha=?, endereco=?, numero_rua=?, bairro=?,"
-                    + "cidade=?, complemento=?, cep=?, telefone=? WHERE id_fornecedor=?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, fornecedor.getNome()+ "");
-            ps.setString(2, fornecedor.getRazao()+ "");
-            ps.setString(3, fornecedor.getSenha()+"");
-            ps.setString(4, fornecedor.getEndereco()+"");
-            ps.setString(5, fornecedor.getNrRua()+"");
-            ps.setString(6, fornecedor.getBairro()+"");
-            ps.setString(7, fornecedor.getCidade()+"");
-            ps.setString(8, fornecedor.getComplemento()+"");
-            ps.setString(9,fornecedor.getCep());
-            ps.setString(10, fornecedor.getTelefone()+""); 
-            ps.setInt(11, fornecedor.getId());
-            ps.execute();
-            ps.close();
-            con.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    
     public static Fornecedor loginFornecedor(String email, String senha){
         Fornecedor novo = new Fornecedor();
         try{
@@ -242,17 +217,12 @@ public class FornecedorDAO {
                 novo.setCep(rs.getString("cep"));
                 novo.setDataAbertura(rs.getString("data_abertura"));
                 novo.setTelefone(rs.getString("telefone"));
-<<<<<<< HEAD
                 novo.setEmail(rs.getString("email"));                  
                 novo.setId(rs.getInt("id_fornecedor"));
                 novo.setInicio(rs.getString("inicio"));  
                 novo.setTermino(rs.getString("termino"));  
                 novo.setDescricao(rs.getString("descricao"));
                 novo.setImagem(rs.getString("imagem"));
-=======
-                novo.setEmail(rs.getString("email"));  
-                novo.setId(rs.getInt("id_fornecedor"));
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             }
             rs.close();
             ps.close();
@@ -303,7 +273,6 @@ public class FornecedorDAO {
             return novo;
         }
       return novo;
-<<<<<<< HEAD
     }
     
     public static void addImagem(int idFornecedor, String imagem) {
@@ -338,8 +307,6 @@ public class FornecedorDAO {
             e.printStackTrace();
         }
 
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     }
     
 }

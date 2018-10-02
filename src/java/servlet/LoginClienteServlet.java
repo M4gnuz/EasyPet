@@ -50,12 +50,8 @@ public class LoginClienteServlet extends HttpServlet {
                 if (novo.getSenha().equals(senha)) {
                     response.addCookie(new Cookie("idCliente", novo.getId()+""));
                    response.addCookie(new Cookie("email", email+""));
-<<<<<<< HEAD
                    response.addCookie(new Cookie("nivel", "1"));
                    response.sendRedirect("jsp/Home.jsp?status=Login");                       
-=======
-                    response.sendRedirect("jsp/Home.jsp");                    
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                 }
             } else {
                out.print("<script type=\'text/javascript\'>");

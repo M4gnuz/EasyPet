@@ -48,17 +48,10 @@ public class CadastroFornecedorServlet extends HttpServlet {
                 if(data.charAt(x)!='/')
                datanova+=data.charAt(x);
             }
-<<<<<<< HEAD
             String mes=datanova.charAt(2)+""+datanova.charAt(3);
             String dia =datanova.charAt(0)+""+datanova.charAt(1);
             String ano =datanova.charAt(4)+"" + datanova.charAt(5)+"" + datanova.charAt(6)+"" + datanova.charAt(7);
             String dataCerta = ano + "/"+mes +"/"+ dia;
-=======
-            String dia=datanova.charAt(2)+""+datanova.charAt(3);
-            String mes =datanova.charAt(0)+""+datanova.charAt(1);
-            String ano =datanova.charAt(4)+"" + datanova.charAt(5)+"" + datanova.charAt(6)+"" + datanova.charAt(7);
-            String dataCerta = ano + mes + dia;
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             System.out.print(dataCerta);
             
             fornecedor.setNome(request.getParameter("nome"));
@@ -75,7 +68,6 @@ public class CadastroFornecedorServlet extends HttpServlet {
             fornecedor.setComplemento(request.getParameter("complemento"));
             fornecedor.setBairro(request.getParameter("bairro"));
             fornecedor.setCidade(request.getParameter("cidade"));
-<<<<<<< HEAD
             fornecedor.setInicio(request.getParameter("inicioHorario"));
             fornecedor.setTermino(request.getParameter("fimHorario"));
             fornecedor.setDescricao(request.getParameter("descricaoFornecedor"));
@@ -91,28 +83,6 @@ public class CadastroFornecedorServlet extends HttpServlet {
                 FornecedorDAO.addFornecedor(fornecedor);
                 response.sendRedirect("jsp/CadastroDeFornecedorImagem.jsp?status=OK&id="+ fornecedor.getId());
                 
-=======
-           
-            
-            if (FornecedorDAO.confereCNPJ(fornecedor)) {
-                out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
-                out.println("alert('CNPJ JA CADASTRADO!')");
-                out.print("</script>");
-
-            } else if(FornecedorDAO.confereEmail(fornecedor)) {
-                out.print("<script type=\'text/javascript\'>");
-                out.println("history.go(-1)");
-                out.println("alert('EMAIL JA CADASTRADO!')");
-                out.print("</script>");    
-
-            } else {
-                FornecedorDAO.addFornecedor(fornecedor);
-                response.sendRedirect("index.html");
-                out.print("<script type=\'text/javascript\'>");
-                out.println("alert('Cadastrado com Sucesso')");
-                out.print("</script>");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             }
         }
     }

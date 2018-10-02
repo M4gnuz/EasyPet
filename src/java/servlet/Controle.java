@@ -7,10 +7,7 @@ package servlet;
 
 import classes.Alimento;
 import dao.AlimentoDAO;
-<<<<<<< HEAD
 import dao.FornecedorDAO;
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 import dao.ProdutoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,7 +57,6 @@ public class Controle extends HttpServlet {
                 }else{
                     response.sendRedirect("jsp/EditarAcessorio.jsp");
                 }
-<<<<<<< HEAD
             }            
             
             if(action.equals("delForn")){
@@ -82,9 +78,6 @@ public class Controle extends HttpServlet {
                 }
             }
             
-=======
-            }
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         }
     }
 

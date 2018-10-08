@@ -44,6 +44,7 @@
         <servlet-name>CadastroServicosServlet</servlet-name>
         <servlet-class>servlet.CadastroServicosServlet</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
         <servlet-name>CadastroPetServlet</servlet-name>
         <servlet-class>servlet.CadastroPetServlet</servlet-class>
@@ -52,6 +53,8 @@
         <servlet-name>uploadPet</servlet-name>
         <servlet-class>servlet.uploadPet</servlet-class>
     </servlet>
+=======
+>>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
     <servlet-mapping>
         <servlet-name>Controle</servlet-name>
         <url-pattern>/Controle</url-pattern>
@@ -80,6 +83,7 @@
         <servlet-name>CadastroServicosServlet</servlet-name>
         <url-pattern>/CadastroServicosServlet</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>CadastroPetServlet</servlet-name>
         <url-pattern>/CadastroPetServlet</url-pattern>
@@ -88,6 +92,8 @@
         <servlet-name>uploadPet</servlet-name>
         <url-pattern>/uploadPet</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
     <session-config>
         <session-timeout>
             30

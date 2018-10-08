@@ -103,12 +103,21 @@ public class upload extends HttpServlet {
             String exibir2 = "../" + vetor[penultimo] + "/" + vetor[ultimo];
             System.out.println("VETOR:    " + exibir2);
            
+<<<<<<< HEAD
             ProdutoDAO.addImagem(idProduto, exibir2);            
            
         }catch(Exception ex){
             System.out.print("ERRO: " + ex.toString());
            
         } 
+=======
+            ProdutoDAO.addImagem(idProduto, exibir2);
+            
+            if(status!=null && status.equals("OK")){
+                response.sendRedirect("jsp/MeusProdutos.jsp?status=OK");
+            }        
+        }
+>>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

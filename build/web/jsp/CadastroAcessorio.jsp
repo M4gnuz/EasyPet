@@ -1,7 +1,10 @@
 <%@page import="dao.FornecedorDAO"%>
 <%@page import="classes.Fornecedor"%>
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
 <% String validacao = request.getParameter("status");%>
 
 <!DOCTYPE html>

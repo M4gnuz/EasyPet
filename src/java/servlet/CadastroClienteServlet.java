@@ -91,7 +91,11 @@ public class CadastroClienteServlet extends HttpServlet {
                 response.sendRedirect("jsp/CadastroCliente.jsp?status=Cpf");
 
             } else if(ClienteDAO.confereEmail(cliente)) {                
+<<<<<<< HEAD
                 response.sendRedirect("jsp/CadastroCliente.jsp?status=Email");
+=======
+                response.sendRedirect("jsp/CadastroCliente.jsp?filtro=Email");
+>>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
 
             } else {
                 ClienteDAO.addCliente(cliente);

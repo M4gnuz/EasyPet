@@ -84,7 +84,6 @@
             </form>
         </div>
         <script type="text/javascript" src="../js/FaleConosco.js" charset="utf-8"></script>
-<<<<<<< HEAD
          <script type="text/javascript" charset="utf-8">
             <% if (status != null) {%>
             if (window.addEventListener) {
@@ -103,8 +102,6 @@
             <%}%>
             
         </script>
-=======
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
         <%@include file="rodape.jsp"%>
     </body>
 </html>

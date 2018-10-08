@@ -28,18 +28,7 @@
 
 
         <%@include file="cabecalho.jsp"%>
-<<<<<<< HEAD
         <%           
-=======
-        <%
-            int id = 0;
-            for (Cookie cookie : request.getCookies()) {
-                if (cookie.getName().equals("idFornecedor")) {
-                    id = Integer.parseInt(cookie.getValue());
-
-                }
-            }
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
 
             Fornecedor novo = FornecedorDAO.getFornecedor(id);
 

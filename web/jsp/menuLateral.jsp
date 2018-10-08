@@ -115,11 +115,7 @@
                                 </button>
                             </h5>
                         </div>
-<<<<<<< HEAD
                         <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
-=======
-                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
                             <div class="card-body">
                                 <ul>
                                     <li>
@@ -128,11 +124,6 @@
                                     <li>
                                         <a id="click" link href="TrocaSenhaFornecedor.jsp">Trocar Senha</a>
                                     </li>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
                                 </ul>
                             </div>
                         </div>

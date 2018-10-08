@@ -30,22 +30,7 @@
         <script src="../Source Files/jquery-ui.min.js"></script>
     </head>
     <body id="tudo">
-<<<<<<< HEAD
         
-=======
-        <%
-            int id = 0;
-            String nome = "";
-            for (Cookie cookie : request.getCookies()) {
-                if (cookie.getName().equals("idFornecedor")) {
-                    id = Integer.parseInt(cookie.getValue());
-
-                }
-                Fornecedor novo = FornecedorDAO.getFornecedor(id);
-                nome = novo.getNome();
-            }
-        %>
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
         <%@include file="cabecalho.jsp"%>
 
         <div class="container">

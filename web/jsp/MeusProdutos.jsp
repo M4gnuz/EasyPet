@@ -44,11 +44,7 @@
     </head>
     <body id="tudo">
 
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
 
         <%@include file="cabecalho.jsp"%>
         <%
@@ -62,11 +58,7 @@
                 }
                 Fornecedor novo = FornecedorDAO.getFornecedor(id);
                 nome = novo.getNome();
-<<<<<<< HEAD
                 imagem = novo.getImagem();
-=======
-                imagem= novo.getImagem();
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
             }
         %>
         <div class="container">
@@ -85,7 +77,6 @@
         <%@include file="menuLateral.jsp"%>
 
         <div class="principal col-xs-12 col-sm-6 col-md-6">
-<<<<<<< HEAD
             <hr>
             <div>
                 <div class="col-md-8">
@@ -138,109 +129,6 @@
                 </tbody>                
             </table>
 
-=======
-            <!--
-            <label>Pesquisar pelo nome do produto</label>
-            <div class="form-group input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                <input name="consulta" id="txt_consulta" placeholder="Consultar" type="text" class="form-control">
-                <input type="button" id="btnConsulta" value="Consultar">                
-            </div>
-            
-            --><hr>
-            
-            <div>
-                <div class="col-md-8">
-                    <!--
-                    <div class="filtro-meus-produtos">
-                        <h2>Categoria </h2>
-                    </div>  
-                    -->
-<!--
-                    <div class="checkbox">
-                        <label>
-                            <input id="chkRacao" type="checkbox" value="Rações">
-                            Rações
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Brinquedos">
-                            Brinquedos
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Higiene">
-                            Higiene
-                        </label>
-                        <label>
-                            <input type="checkbox" value="Acessórios">
-                            Acessórios
-                        </label>
-                        <label>
-                            <input id="btnFiltrar" type="button" value="Filtrar">                            
-                        </label>
-
-                        <!-<button type="button" class="btn btn-primary">Cadastrar Produto</button>->
-                    </div>
-                    -->
-                </div>
-                <div class="col-md-4" >
-                    <!--onchange="ordenar(this.value)"-->
-                    <!--
-                    <select  class="form-control form-control-sm">
-                        <option value="Ordenar">Ordenar</option>
-                        <option value="MenorPreco">Menor Preço</option>
-                        <option value="Maior Preco">Maior Preço</option>
-                        <option value="Nome(a-z)">Nome (a-z)</option>
-                        <option value="Nome (z-a)">Nome (z-a)</option>
-                    </select>
-                    -->
-                </div>
-
-            </div>
-            <br>
-                <table class="table" id="tabela_busca_meus_produtos">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Imagem</th>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Estoque</th>
-                            <th scope="col">Preço</th>
-                            <th scope="col">Categoria</th>                        
-                            <th scope="col">Excluir</th>
-                            <th scope="col">Editar</th>
-                        </tr>
-                    </thead>
-                    <tbody>                    
-                        <%
-                            List<Produto> lista = new ArrayList();
-                            for (Cookie cookie : request.getCookies()) {
-                                if (cookie.getName().equals("idFornecedor")) {
-                                    id = Integer.parseInt(cookie.getValue());
-                                }
-                            }
-                            ProdutoDAO.getProdutos(lista, id);
-
-                            for (int contador = 0; contador < lista.size(); contador++) {
-                                Produto produto = lista.get(contador);
-                                out.print("<tr>"
-                                        + "<td scope='row'><img src='" + produto.getImagem() + "' width='100px' height='80px' ></td>"
-                                        + "<td style='text-align: center'>" + produto.getId() + "</td>"
-                                        + "<td style='text-align: center'>" + produto.getNome() + "</td>"
-                                        + "<td style='text-align: center'>" + produto.getEstoque() + "</td>"
-                                        + "<td style='text-align: center'>" + produto.getPreco() + "</td>"
-                                        + "<td style='text-align: center'>" + produto.getCategoria() + "</td>"
-                                        + "<td style='text-align: center'><a href='../Controle?id=" + produto.getId() + "&action=del 'id='excluirProd" + contador
-                                        + "' name='botoes' class='fas fa-trash-alt' style='font-size:22px;'</a></td>"
-                                        + "<td style='text-align: center'><a href='../Controle?id=" + produto.getId() + "&action=alt' <i 'id='editarProd" + contador
-                                        + "' class='far fa-edit' style='font-size:22px;'></i></a></td>"
-                                        + "</tr>");
-                            }
-                        %>
-
-                    </tbody>                
-                </table>
-            
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
             <br>
 
         </div> 

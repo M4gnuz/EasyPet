@@ -9,10 +9,7 @@ import classes.Alimento;
 import classes.Pet;
 import dao.AlimentoDAO;
 import dao.FornecedorDAO;
-<<<<<<< HEAD
 import dao.PetDAO;
-=======
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
 import dao.ProdutoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -83,7 +80,6 @@ public class Controle extends HttpServlet {
                 }
             }
             
-<<<<<<< HEAD
             if(action.equals("delPet")){
                 int id = Integer.parseInt(request.getParameter("id"));
                 PetDAO.excluirPet(id);
@@ -97,8 +93,6 @@ public class Controle extends HttpServlet {
                 request.getRequestDispatcher("jsp/EditarPet.jsp").forward(request, response);
             }
             
-=======
->>>>>>> 98e1061459abdd0adb6ad8c5b6325acbb7c3d369
         }
     }
 

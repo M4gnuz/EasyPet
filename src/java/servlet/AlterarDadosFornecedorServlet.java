@@ -50,12 +50,9 @@ public class AlterarDadosFornecedorServlet extends HttpServlet {
             fornecedor.setComplemento(request.getParameter("complemento"));
             fornecedor.setBairro(request.getParameter("bairro"));
             fornecedor.setCidade(request.getParameter("cidade"));
-<<<<<<< HEAD
             fornecedor.setInicio(request.getParameter("inicioHorario"));
             fornecedor.setTermino(request.getParameter("fimHorario"));
             fornecedor.setDescricao(request.getParameter("descricaoFornecedor"));
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
             
             int id = 0;
             for (Cookie cookie : request.getCookies()) {

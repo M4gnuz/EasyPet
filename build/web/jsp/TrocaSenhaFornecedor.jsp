@@ -3,6 +3,9 @@
     Created on : 25/09/2018, 00:56:10
     Author     : Luis Ragazzi
 --%>
+<%
+    String status = request.getParameter("status");
+    %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -54,6 +57,22 @@
             </form>
         </div>
         <script type="text/javascript" src="../js/trocaSenha.js" charset="utf-8"></script>
+         <script type="text/javascript" charset="utf-8">
+             <% if (status != null) {%>
+            if (window.addEventListener) {
+                window.addEventListener('load', validaAlert());
+            } else {
+                window.attachEvent('onload', validaAlert());
+            }
+            function validaAlert() {
+
+            <% if (status.equals("fail")) { %>
+                alert("Verifique a senha digitada");
+            <%}%>               
+            }
+            ;
+            <%}%>
+        </script>
         <%@include file="rodape.jsp"%>
     </body>
 </html>

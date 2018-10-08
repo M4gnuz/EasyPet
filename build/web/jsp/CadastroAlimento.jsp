@@ -15,11 +15,7 @@
         <link rel="stylesheet" type="text/css" href="../css/menuLateral.css"> 
         <link rel="stylesheet" type="text/css" href="../css/rodape.css"> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
               crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
@@ -34,38 +30,13 @@
         <script src="../Source Files/jquery-ui.min.js"></script>
     </head>
     <body id="tudo">
-        <%
-<<<<<<< HEAD
-            int id = 0;
-            String nome = "";
-            for (Cookie cookie : request.getCookies()) {
-                if (cookie.getName().equals("idFornecedor")) {
-                    id = Integer.parseInt(cookie.getValue());
-
-                }
-                Fornecedor novo = FornecedorDAO.getFornecedor(id);
-                nome = novo.getNome();
-            }
-        %>
-=======
-            int id =0;
-            String nome="";            
-            for (Cookie cookie : request.getCookies()) {
-                            if (cookie.getName().equals("idFornecedor")) {
-                                id = Integer.parseInt(cookie.getValue());
-                                
-                            }
-                            Fornecedor novo = FornecedorDAO.getFornecedor(id);                            
-                            nome = novo.getNome();                            
-                        }            
-            %>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
+        
         <%@include file="cabecalho.jsp"%>
 
         <div class="container">
 
             <div id="petlogo" class="principal2  col-xs-12 col-sm-4 col-md-4">
-                <h4><%=nome%></h4>
+                <h4><%out.print(forn.getNome());%></h4>
             </div>
 
         </div>
@@ -102,7 +73,6 @@
                     <textarea class="form-control" name="descricao" id="txtdescricao" rows="4"  maxlength="270" placeholder="Faça uma descrição do produto com até 270 caracteres."></textarea>
                 </div>
                 <div class="form-group col-xs-12 col-sm-10 col-md-10" id="contraindicacao">
-<<<<<<< HEAD
 
                     <label for="exampleFormControlTextarea1">Contra-Indicação</label>
                     <textarea class="form-control" name="contra" id="txtcontrain" rows="3" maxlength="200"></textarea>
@@ -112,17 +82,6 @@
 
                     <label for="exampleFormControlTextarea1">Ingredientes*</label>
                     <textarea class="form-control" name="ingredientes" id="txtIngredientes" rows="3"></textarea>
-=======
-  
-                        <label for="exampleFormControlTextarea1">Contra-Indicação</label>
-                        <textarea class="form-control" name="contra" id="txtcontrain" rows="3" maxlength="200"></textarea>
-                   
-                    <!-- PESQUISAR JQUERY CLONE PARA ESSA FUNÇÃO// OU ARRAY METODO POST -->
-                    <br>
-
-                        <label for="exampleFormControlTextarea1">Ingredientes*</label>
-                        <textarea class="form-control" name="contra" id="txtIngredientes" rows="3"></textarea>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                     <hr>
 
                     <div class="row">
@@ -136,11 +95,7 @@
                         <div class="form-group col-xs-12 col-sm-3 col-md-3" id="estoqueA">
                             <div class=" form-group " id="estoque">
                                 <label class="fonte">Estoque:*</label>
-<<<<<<< HEAD
                                 <input type="text" name="estoque" class="form-control" id="inputEstoqueA" maxlength="5">
-=======
-                                <input type="number" name="estoque" class="form-control" id="inputEstoqueA">
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-5 col-md-5" id="dataV">
@@ -155,19 +110,11 @@
                                 <label>Categorias de alimentos para: *</label>
                                 <select class="custom-select" name="categoria" id="inputGroupSelect02">
                                     <option selected>--</option>
-<<<<<<< HEAD
                                     <option value="cachorros">Cachorros</option>
                                     <option value="gatos">Gatos</option>
                                     <option value="passaros">Pássaros</option>
                                     <option value="hamsters">Hamsters</option>
                                     <option value="peixes">Peixes</option>                                     
-=======
-                                    <option value="1">Cachorros</option>
-                                    <option value="1">Gatos</option>
-                                    <option value="1">Pássaros</option>
-                                    <option value="1">hamsters</option>
-                                    <option value="1">Peixes</option>                                   
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                                 </select>
                             </div>
                         </div>
@@ -184,15 +131,11 @@
             </div>
         </form>   
         <%@include file="rodape.jsp"%>	
-<<<<<<< HEAD
         <script type="text/javascript" src="../js/cadastroAlimento.js" charset="utf-8"></script> 
         <script type="text/javascript" charset="utf-8">
             document.getElementById("cancelarCadAcessorio").onclick= function(){
                 history.back();               
             };
         </script> 
-=======
-        <script type="text/javascript" src="../js/cadastroAlimento.js"></script> 
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     </body>
 </html>

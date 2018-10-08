@@ -132,7 +132,6 @@
                             <input type="text" name="cidade" class="form-control" id="inputCidade">
                         </div>
                     </div>
-<<<<<<< HEAD
                     <hr>
                     <br>
                     <label>Horário de atendimento</label>
@@ -154,10 +153,6 @@
                     </div>
 
                     <div class="form-row">
-=======
-                    <br>
-                    <div class="form-row">
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                         <div class="form-group form-check ">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Aceitos os Termos de Uso </label>
@@ -201,17 +196,10 @@
                         <h2>Termos de uso</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna augue, suscipit non velit non, posuere pretium libero. Cras sodales eleifend nisi. Etiam vestibulum turpis et mi consectetur, varius malesuada lorem elementum. Suspendisse a iaculis odio, sit amet facilisis leo. Phasellus faucibus feugiat dolor, nec condimentum ipsum bibendum in. Curabitur in quam finibus, tincidunt massa a, tincidunt sapien. Aliquam iaculis velit at hendrerit volutpat. In sollicitudin magna nisi, sed aliquet sem dictum id. Cras porttitor in turpis ut vehicula. Aliquam scelerisque lobortis vestibulum. Nam accumsan congue diam eget malesuada.</p>
                         <p>Cras blandit rutrum est. Ut efficitur quam eget magna porta dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas efficitur sit amet orci quis auctor. In sapien erat, scelerisque imperdiet ex eu, luctus imperdiet metus. Donec eget dolor iaculis risus tempus molestie a in tortor. Nulla ex massa, suscipit nec consequat et, venenatis sed dui. Mauris fermentum magna eu volutpat egestas. Curabitur volutpat risus eget risus vehicula, et rutrum est tempor. Etiam luctus lorem ante, lacinia euismod arcu scelerisque quis.</p>
-<<<<<<< HEAD
 
                     </div>
                 </div>
 
-=======
-                        
-                    </div>
-                </div>
-                
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                 <div id="modalRequisitos" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
@@ -219,11 +207,7 @@
                         <h2>Pré Requisitos</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna augue, suscipit non velit non, posuere pretium libero. Cras sodales eleifend nisi. Etiam vestibulum turpis et mi consectetur, varius malesuada lorem elementum. Suspendisse a iaculis odio, sit amet facilisis leo. Phasellus faucibus feugiat dolor, nec condimentum ipsum bibendum in. Curabitur in quam finibus, tincidunt massa a, tincidunt sapien. Aliquam iaculis velit at hendrerit volutpat. In sollicitudin magna nisi, sed aliquet sem dictum id. Cras porttitor in turpis ut vehicula. Aliquam scelerisque lobortis vestibulum. Nam accumsan congue diam eget malesuada.</p>
                         <p>Cras blandit rutrum est. Ut efficitur quam eget magna porta dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas efficitur sit amet orci quis auctor. In sapien erat, scelerisque imperdiet ex eu, luctus imperdiet metus. Donec eget dolor iaculis risus tempus molestie a in tortor. Nulla ex massa, suscipit nec consequat et, venenatis sed dui. Mauris fermentum magna eu volutpat egestas. Curabitur volutpat risus eget risus vehicula, et rutrum est tempor. Etiam luctus lorem ante, lacinia euismod arcu scelerisque quis.</p>
-<<<<<<< HEAD
 
-=======
-                        
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                     </div>
                 </div>
 

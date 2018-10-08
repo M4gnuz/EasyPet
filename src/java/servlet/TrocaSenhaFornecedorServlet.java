@@ -50,10 +50,10 @@ public class TrocaSenhaFornecedorServlet extends HttpServlet {
             if(FornecedorDAO.confirmaSenha(fornecedor).equals(fornecedor.getSenha())){
                 String senhaNova = request.getParameter("novaSenha");
                 FornecedorDAO.alteraSenha(id, senhaNova);
-                response.sendRedirect("jsp/MeusProdutos.jsp"); 
+                response.sendRedirect("jsp/MeusProdutos.jsp?status=senha");  
             }
             else{
-                response.sendRedirect("jsp/TrocaSenhaFornecedor.jsp"); 
+                response.sendRedirect("jsp/TrocaSenhaFornecedor.jsp?status=fail");
             }
             
         }

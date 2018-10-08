@@ -27,22 +27,11 @@
 
     </head>
     <body id="tudo">
-        <%
-            int id = 0;
-            String nome = "";
-            for (Cookie cookie : request.getCookies()) {
-                if (cookie.getName().equals("idFornecedor")) {
-                    id = Integer.parseInt(cookie.getValue());
-
-                }
-                Fornecedor novo = FornecedorDAO.getFornecedor(id);
-                nome = novo.getNome();
-            }
-        %>
+        
         <%@include file="cabecalho.jsp"%>
         <div class="container">
             <div id="petlogo" class="principal2  col-xs-12 col-sm-4 col-md-4">
-                <h4><%=nome%></h4>
+                <h4><%out.print(forn.getNome());%></h4>
             </div>
         </div>
         <div class="container">
@@ -64,22 +53,14 @@
 
         <form action="../EditarProdutoServlet" method="post" id="formAcessorio">
             <div id="fotoprod" class="principal col-xs-12 col-sm-6 col-md-6">
-<<<<<<< HEAD
         <!--   <h4>Fotos do seu produto</h4>
-=======
-                <h4>Fotos do seu produto</h4>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
                 <div class="custom-file" id="anexo">
                     <input type="file" name="imagem" class="custom-file-input mb-3" id="customFile">
                     <label class="custom-file-label" for="customFile">Enviar Fotos</label>
                 </div>
                 <button type="button" id="excluir_fotoacessorio" class=" btn2 btn btn-success">Excluir</button>
-<<<<<<< HEAD
         -->
-=======
-
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                 <hr>
                 <div class="form-group col-xs-12 col-sm-10 col-md-10" id="titulop">
                     <label>Titulo do Produto: *</label>
@@ -98,21 +79,13 @@
                         <div class="form-group col-xs-12 col-sm-12 col-md-4" id="precoA">
                             <div class="form-group " id="preco">
                                 <label>Preço: *</label>
-<<<<<<< HEAD
                                 <input type="text" <% out.print("value='"+produto.getPreco()+"'"); %> name="precoA" class="form-control" id="inputPrecoA">
-=======
-                                <input type="text" <% out.print("value='" + produto.getPreco() + 0 + "'"); %> name="precoA" class="form-control" id="inputPrecoA">
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-3" id="estoqueA">
                             <div class="form-group " id="estoque">
                                 <label>Estoque: *</label>
-<<<<<<< HEAD
                                 <input type="text" <% out.print("value='" + produto.getEstoque() + "'"); %> maxlength="5" name="estoque" class="form-control" id="inputEstoqueA">
-=======
-                                <input type="number" <% out.print("value='" + produto.getEstoque() + "'"); %> name="estoque" class="form-control" id="inputEstoqueA">
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                             </div>
                         </div>
 
@@ -120,35 +93,9 @@
                             <div class=" form-group ">
                                 <label>Categorias: *</label>
                                 <select class="custom-select" name="categoria" id="inputGroupSelect02">
-<<<<<<< HEAD
                                     <option value="higiene" <% if(produto.getCategoria().equals("higiene")) out.print("selected"); %>>Higiene</option>
                                     <option value="brinquedos" <% if(produto.getCategoria().equals("brinquedos")) out.print("selected"); %>>Brinquedos</option>
                                     <option value="acessorios" <% if(produto.getCategoria().equals("acessorios")) out.print("selected"); %>>Acessórios</option>
-=======
-                                    <option <% out.print("value='" + produto.getCategoria() + "'"); %> selected>
-                                        <%
-                                            int valor2 = Integer.parseInt(produto.getCategoria());
-                                            switch (valor2) {
-                                                case 1:
-                                                    out.print("Higiene");
-                                                    break;
-                                                case 2:
-                                                    out.print("Brinquedos");
-                                                    break;
-                                                case 3:
-                                                    out.print("Acessórios");
-                                                    break;
-                                                case 4:
-                                                    out.print("Transporte");
-                                                    break;
-                                            }
-                                        %>
-                                    </option>
-                                    <option value="1">Higiene</option>
-                                    <option value="2">Brinquedos</option>
-                                    <option value="3">Acessórios</option>
-                                    <option value="4">Transporte</option>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                                 </select>
                             </div>
                         </div>
@@ -158,32 +105,21 @@
 
                 <div class="row">                       
                     <div class="form-group col-xs-12 col-sm-11 col-md-11" id="cidade">
-<<<<<<< HEAD
                         <button type="submit" name="opcao" id="cancelarCadAcessorio" class=" btn2 btn btn-cancel float-right " value="cancelar">Cancelar</button>
                     </div>
                     <div class="form-group col-xs-12 col-sm-1 col-md-1" id="cidade">
                         <button type="submit" name="opcao" id="salvar_acessorio" class=" btn2 btn btn-success float-right" value="salvar">Salvar</button>
-=======
-                        <button type="button" id="cancelarCadAcessorio" class=" btn2 btn btn-cancel float-right ">Cancelar</button>
-                    </div>
-                    <div class="form-group col-xs-12 col-sm-1 col-md-1" id="cidade">
-                        <button type="submit" id="salvar_acessorio" class=" btn2 btn btn-success float-right">Salvar</button>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                     </div>
                     <!-- <a href="MeusProdutos.jsp" class="btn2 btn btn-success">Cancelar</a>-->
                 </div>
             </div>
         </form> 
         <%@include file="rodape.jsp"%>
-<<<<<<< HEAD
         <script type="text/javascript" src="../js/cadastrarAcessorio.js" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             document.getElementById("cancelarCadAcessorio").onclick= function(){
                 history.back();               
             };
         </script> 
-=======
-        <script type="text/javascript" src="../js/cadastroaAcessorio.js"></script>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     </body>
 </html>

@@ -37,8 +37,8 @@
                             </div>
                             <div class="row" id="botoesCadImagem">                       
                                 <div class="form-group col-xs-12 col-sm-9 col-md-9" >
-                                <button type="button" name="opcao" id="cancelarCadImagem" class=" btn2 btn btn-cancel float-right " value="cancelar">Cancelar</button>
-                                 
+                                    <button type="button" name="opcao" id="cancelarCadImagem" class=" btn2 btn btn-cancel float-right " value="cancelar">Cancelar</button>
+
                                 </div>
                                 <div class="col-md-3 col-sm-3">
                                     <button type="button" id="enviarImagem" class=" btn2 btn btn-success float-right">Enviar</button>    
@@ -63,6 +63,7 @@
             function uploadFile() {
                 var target = document.querySelector("#target");
                 var file = document.querySelector("input[type=file]").files[0];
+                var size = document.getElementById("customFile").files[0].size;
 
                 var reader = new FileReader();
                 reader.onloadend = function () {
@@ -82,28 +83,36 @@
                     });
                 };
 
-                if (file) {
 
-                    reader.readAsDataURL(file);
+                if (size < 1500000) {
+                    if (file) {
+                        reader.readAsDataURL(file);
+
+                    } else {
+                        target.src = "";
+                    }
                 } else {
-                    target.src = "";
+                    alert("Imagem grande");
                 }
             }
             window.onload = function () {
             <% if (status != null) {%>
             <% if (status.equals("OK")) { %>
-                alert("Produto Cadastrado com Sucesso!");
+                alert("Cadastro quase concluído, escolha uma imagem para concluir com o cadastro!");
             <%}%>
             <%}%>
 
-                document.getElementById("enviarImagem").onclick = function () {
-
-                    window.location.href = "MeusProdutos.jsp?status=OK";
-
+                document.getElementById("enviarImagem").onclick = function () {                    
+                    
+                    if (document.getElementById("target").src==window.location.href) {
+                        alert("Por favor selecione uma imagem!");
+                    } else {
+                        window.location.href = "MeusProdutos.jsp?status=OK";
+                    }
                 };
-                
-                document.getElementById("cancelarCadImagem").onclick = function(){
-                     window.location.href ="../Controle?action=del&id=<%=idProduto%>";
+
+                document.getElementById("cancelarCadImagem").onclick = function () {
+                    window.location.href = "../Controle?action=del&id=<%=idProduto%>";
                 };
             };
         </script>

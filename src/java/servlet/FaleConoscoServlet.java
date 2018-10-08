@@ -43,7 +43,7 @@ public class FaleConoscoServlet extends HttpServlet {
             String motivo = request.getParameter("motivo");
             
             JavaMailApp.enviarEmailFaleConosco(nome,email, mensagem, telefone, assunto, motivo);
-                response.sendRedirect("jsp/FaleConosco.jsp");   
+                response.sendRedirect("jsp/FaleConosco.jsp?status=OK");   
         }
     }
 

@@ -1,0 +1,24 @@
+SMAP
+Carrinho_jsp.java
+JSP
+*S JSP
+*F
++ 0 Carrinho.jsp
+jsp/Carrinho.jsp
++ 1 CabecalhoCliente.jsp
+jsp/CabecalhoCliente.jsp
++ 2 rodape.jsp
+jsp/rodape.jsp
+*L
+1,5:54
+5:58,2
+6,24:60
+5#1,13:84
+18,10:98
+27,38:108
+65:146,3
+66,17:149
+29#0,129:165
+5#2,49:294
+157#0,8:342
+*E

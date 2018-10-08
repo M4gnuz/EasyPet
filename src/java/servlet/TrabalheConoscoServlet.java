@@ -41,7 +41,7 @@ public class TrabalheConoscoServlet extends HttpServlet {
             String telefone = request.getParameter("telefone");
             
             JavaMailApp.enviarEmailTrabalheConosco(nome,email, areaInteresse, telefone);
-                response.sendRedirect("jsp/TrabalheConosco_v2.jsp");   
+                response.sendRedirect("jsp/TrabalheConosco_v2.jsp?status=OK");   
         }
     }
 

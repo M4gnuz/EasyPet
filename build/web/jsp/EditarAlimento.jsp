@@ -29,18 +29,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
     </head>
     <body id="tudo">
-        <%
-            int id =0;
-            String nome="";            
-            for (Cookie cookie : request.getCookies()) {
-                            if (cookie.getName().equals("idFornecedor")) {
-                                id = Integer.parseInt(cookie.getValue());
-                                
-                            }
-                            Fornecedor novo = FornecedorDAO.getFornecedor(id);                            
-                            nome = novo.getNome();                            
-                        }            
-            %>
+       
         <%@include file="cabecalho.jsp"%>
         <%           
             
@@ -55,7 +44,7 @@
         <div class="container">
 
             <div id="petlogo" class="principal2  col-xs-12 col-sm-4 col-md-4">
-                <h4><%=nome%></h4>
+                <h4><%out.print(forn.getNome());%></h4>
             </div>
 
         </div>
@@ -71,11 +60,7 @@
 
         <form action="../EditarAlimentoServlet" method="post" id="formAlimento">
             <div id="fotoprod" class="principal col-xs-12 col-sm-6 col-md-6">
-<<<<<<< HEAD
            <!--     <h4>Fotos do seu produto</h4>
-=======
-                <h4>Fotos do seu produto</h4>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
                 <div class="custom-file" id="anexo">
                     <input type="file" class="custom-file-input mb-3" id="customFile">
@@ -83,10 +68,7 @@
                 </div> 
                 <br><br>
                  <button type="button" id="excluir_fotoalimento" class=" btn2 btn btn-success">Excluir</button>
-<<<<<<< HEAD
            -->
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                 <hr>
                 <div class="form-group col-xs-12 col-sm-8 col-md-8" id="titulop">
                     <label>Titulo do Produto: *</label>
@@ -110,22 +92,14 @@
                         <div class="form-group col-xs-12 col-sm-4    col-md-4" id="precoA">
                             <div class="form-group " id="preco">
                                 <label class="fonte">Preço: *</label>
-<<<<<<< HEAD
                                 <input type="text" <% out.print("value='"+alimento.getPreco()+"'"); %> name="precoA" class="form-control" id="inputPrecoA">
-=======
-                                <input type="text" <% out.print("value='"+alimento.getPreco()+0+"'"); %> name="precoA" class="form-control" id="inputPrecoA">
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-3 col-md-3" id="estoqueA">
                             <div class=" form-group " id="estoque">
                                 <label class="fonte">Estoque:*</label>
-<<<<<<< HEAD
                                 <input type="text" <% out.print("value='"+alimento.getEstoque()+"'"); %> maxlength="5" name="estoque" class="form-control" id="inputEstoqueA">
-=======
-                                <input type="number" <% out.print("value='"+alimento.getEstoque()+"'"); %> name="estoque" class="form-control" id="inputEstoqueA">
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                             </div>
                         </div>
                         <div class="form-group col-xs-12 col-sm-5 col-md-5" id="dataV">
@@ -138,18 +112,12 @@
                         <div class=" form-group col-xs-12 col-sm-6 col-md-6">
                             <div class=" form-group ">
                                 <label class="fonte">Categorias: *</label>
-<<<<<<< HEAD
                                  <select class="custom-select" name="categoria" id="inputGroupSelect02">
                                     <option value="cachorros" <% if(alimento.getCategoria().equals("cachorros")) out.print("selected"); %>>Cachorros</option>
                                     <option value="gatos" <% if(alimento.getCategoria().equals("gatos")) out.print("selected"); %>>Gatos</option>
                                     <option value="passaros" <% if(alimento.getCategoria().equals("pássaros")) out.print("selected"); %>>Pássaros</option>
                                     <option value="hamsters" <% if(alimento.getCategoria().equals("hamsters")) out.print("selected"); %>>Hamsters</option>
                                     <option value="peixes" <% if(alimento.getCategoria().equals("peixes")) out.print("selected"); %>>Peixes</option>   
-=======
-                                <select class="custom-select" name="categoria" id="inputGroupSelect02">
-                                    <option selected>--</option>
-                                    <option value="1">Alimentos</option>
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                                 </select>
                             </div>
                         </div>
@@ -160,15 +128,11 @@
             </div>
         </form>   
         <%@include file="rodape.jsp"%>	
-<<<<<<< HEAD
         <script type="text/javascript" src="../js/cadastroAlimento.js" charset="utf-8"></script> 
                 <script type="text/javascript" charset="utf-8">
             document.getElementById("cancelar_alimento").onclick= function(){
                 history.back();               
             };
         </script> 
-=======
-        <script type="text/javascript" src="../js/cadastroAlimento.js"></script>   
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     </body>
 </html>

@@ -93,11 +93,7 @@ function validaCampo() {
 
     //Valida campos em branco
     if ($("#inputNome").val() == "") {
-<<<<<<< HEAD
         alert("Por favor, preencher o campo nome fantasia");
-=======
-        alert("Por favor, preencher o campo Nome Fantasia");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputNome").css("border", "1px solid red");
         $("#inputNome").focus();
         return false
@@ -170,11 +166,7 @@ function validaCampo() {
             cnpj == "77777777777777" ||
             cnpj == "88888888888888" ||
             cnpj == "99999999999999") {
-<<<<<<< HEAD
         alert("Por favor, digite um CNPJ válido");
-=======
-        alert("Por favor digite um CNPJ válido");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCnpj").focus();
         return false;
     }
@@ -193,11 +185,7 @@ function validaCampo() {
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
     if (resultado != digitos.charAt(0)) {
-<<<<<<< HEAD
         alert("Por favor, digite um CNPJ válido");
-=======
-        alert("Por favor digite um CNPJ válido");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCnpj").focus();
         return false;
     }
@@ -213,11 +201,7 @@ function validaCampo() {
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
     if (resultado != digitos.charAt(1)) {
-<<<<<<< HEAD
         alert("Por favor, digite um CNPJ válido");
-=======
-        alert("Por favor digite um CNPJ válido");
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
         $("#inputCnpj").focus();
         return false;
     }
@@ -283,7 +267,6 @@ function validaCampo() {
     senha = document.getElementById('inputSenha').value;
     confirSenha = document.getElementById('inputConfsenha').value;
     if (senha != confirSenha) {
-<<<<<<< HEAD
         alert("Senhas diferentes, por favor digitar as senhas iguais");
         return false;
     }
@@ -312,11 +295,6 @@ function validaCampo() {
         return false
     }
     $("#inoutDescricaoFornecedor").css("border", "1px solid #ced4da");
-=======
-        alert("Senhas Diferentes!\nPor favor digitar as senhas iguais.");
-        return false;
-    }
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
 
     return true;

@@ -25,7 +25,6 @@
     </head>
     <body id="tudo">
         <%@include file="CabecalhoCliente.jsp"%>
-<<<<<<< HEAD
         <%
             String logado = novo.getNome();
         %>
@@ -64,44 +63,6 @@
                                 <div class="carousel-caption ">
                                     <h1 id="letra">Produtos Para seu Pet</h1>
 
-=======
-
-        <div class="container" >
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100 teste" src="../ResourcesIm/help1.jpg" alt="First slide">
-                                <div class="carousel-caption ">
-                                    <h1 id="letra" >Cuidados para seu Pet</h1>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100 teste" src="../ResourcesIm/banner03.jpg" alt="Second slide">
-                                <div class="carousel-caption ">
-                                    <h1 id="letra" >Plataforma Completa para Logista </h1>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100 teste" src="../ResourcesIm/help2.jpg" alt="Third slide">
-                                <div class="carousel-caption ">
-                                    <h1 id="letra" >Acessórios Para seu Pet</h1>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100 teste" src="../ResourcesIm/banner04.jpg" alt="Four slide">
-                                <div class="carousel-caption ">
-                                    <h1 id="letra">Entrega Rapida e Pratica</h1>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100 teste" src="../ResourcesIm/banner05.jpg" alt="Third slide">
-                                <div class="carousel-caption ">
-                                    <h1 id="letra">Produtos Para seu Pet</h1>
-
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
                                 </div>
                             </div>
                         </div>
@@ -145,7 +106,6 @@
         </div>   
 
         <%@include file="rodape.jsp"%>
-<<<<<<< HEAD
         <script type="text/javascript">
              <% if (status != null) {%>
             if (window.addEventListener) {
@@ -155,17 +115,12 @@
             }            
             function validaAlert() {
 
-            <% if (status.equals("OK")) { %>
-                alert("Produto Cadastrado com Sucesso!");
-            <%}%>
-            <% if (status.equals("Login")) { %>               
-                alert("BEM VINDO Sr. <%=logado %> !");
-            <%}%>
+            <% if (status.equals("Okp")) { %>
+                alert("Pet Cadastrado com Sucesso!");
+            <%}%>            
             }
             ;
             <%}%>
         </script>
-=======
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
     </body>
 </html>

@@ -43,7 +43,7 @@
         </div>
 
         <div class="container">
-            <div id="logocentral" class="principal2 col-xs-12 col-sm-8 col-md-8">
+            <div id="logocentral" class="principal2 col-xs-12 col-sm-7 col-md-7">
                 <h1 id="nomeTopo">Meus Serviços</h1>
             </div>
         </div>
@@ -67,33 +67,33 @@
                 <thead class="thead-dark">
                     <tr>
                         <th style='text-align: center' scope="col">Serviço</th>
-                        <th style='text-align: center' scope="col">Porte</th>
+                        <th style='text-align: center' scope="col">Tempo</th>
                         <th style='text-align: center' scope="col">Preço</th>
                         <th style='text-align: center' scope="col">Excluir</th>
                         <th style='text-align: center' scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody> 
-                    
-                        <%
-                            List<Servico> lista = new ArrayList();
-                            
-                            ServicoDAO.getProdutos(lista, id);
-                            for (int contador = 0; contador < lista.size(); contador++) {
-                                Servico servico = lista.get(contador);
-                                out.print("<tr>"
-                                        + "<td>" + servico.getCategoria()+ "</td>"
-                                        + "<td>" + servico.getPorte()+ "</td>"
-                                        + "<td>" + (servico.getPreco()+servico.getFrete())+ "</td>"
-                                        + "<td><a href='../Controle?id=" + servico.getId() + "&action=delServico'id='excluirProd" + contador
-                                        + "' name='botoes' class='fas fa-trash-alt' style='font-size:22px;'</a></td>"
-                                        + "<td><a href='../Controle?id=" + servico.getId() + "&action=altServico' <i 'id='editarProd" + contador
-                                        + "' class='far fa-edit' style='font-size:22px;'></i></a></td>"
-                                        + "</tr>");
-                            }
-                            
-                        %>
-                        
+
+                    <%
+                        List<Servico> lista = new ArrayList();
+
+                        ServicoDAO.getProdutos(lista, id);
+                        for (int contador = 0; contador < lista.size(); contador++) {
+                            Servico servico = lista.get(contador);
+                            out.print("<tr>"
+                                    + "<td>" + servico.getCategoria() + "</td>"
+                                    + "<td>" + servico.getTempo()+ "</td>"
+                                    + "<td>" + (servico.getPreco() + servico.getFrete()) + "</td>"
+                                    + "<td><a href='../Controle?id=" + servico.getId() + "&action=delServico'id='excluirProd" + contador
+                                    + "' name='botoes' class='fas fa-trash-alt' style='font-size:22px;'</a></td>"
+                                    + "<td><a href='../Controle?id=" + servico.getId() + "&action=altServico' <i 'id='editarProd" + contador
+                                    + "' class='far fa-edit' style='font-size:22px;'></i></a></td>"
+                                    + "</tr>");
+                        }
+
+                    %>
+
                 </tbody>                
             </table>
 
@@ -104,6 +104,15 @@
 
         <script type="text/javascript" charset="utf-8">
 
+
+
+
+
+            $("#tabela_busca_meus_servicos").dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+                }
+            });
         </script>
     </body>
 </html>

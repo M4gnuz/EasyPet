@@ -7,33 +7,12 @@
 <%@page import="classes.Fornecedor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-    int id = 0;
-    String nome = "";
-    String descricao = "";
-    String inicio = "";
-    String termino = "";
-    String foto="";
 
-    for (Cookie cookie : request.getCookies()) {
-        if (cookie.getName().equals("idFornecedor")) {
-            id = Integer.parseInt(cookie.getValue());
-
-        }
-        Fornecedor novo = FornecedorDAO.getFornecedor(id);
-        nome = novo.getNome();
-        descricao = novo.getDescricao();
-        inicio = novo.getInicio();
-        termino = novo.getTermino();
-        foto = novo.getImagem();
-
-    }
-%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Loja</title>
-        <link rel="stylesheet" type="text/css" href="../css/Loja.css">    
+        <link rel="stylesheet" type="text/css" href="../css/loja.css">    
         <link rel="stylesheet" type="text/css" href="../css/rodape.css"> 
         <link rel="stylesheet" type="text/css" href="../css/cabecalho.css"> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
@@ -56,47 +35,64 @@
     </head>
     <body id="tudo">
         <%@include file="cabecalho.jsp"%>
+
+        <%String nome = "";
+            String descricao = "";
+            String inicio = "";
+            String termino = "";
+            String foto = "";
+            nome = forn.getNome();
+            descricao = forn.getDescricao();
+            inicio = forn.getInicio();
+            termino = forn.getTermino();
+            foto = forn.getImagem();
+        %>
+
         <div class="container" id="quemSomos">
             <h1 class="titulo"> <%= nome%></h1>
-            <div class="row">
-                <div class="col-md-4 col-sm-8">
+            <div class="row" id="informacoesFornecedor">
+                <div class="col-md-4 col-sm-12">
                     <div class="text-center">
                         <img src="<%= foto%>" class="img-fluid" alt="Imagem responsiva" id="imagem">
                     </div>
 
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-1 col-sm-12">
+                </div>
+                <div class="col-md-7 col-sm-12">
                     <h6 id="tituloDescricaodaLoja">Descrição da Loja/Propaganda</h6>
                     <div id="texto">
                         <p>
                             <%= descricao%>
-                        </p>                
-
-                        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-                        <div class="estrelas" id="avaliacao"> <h6>Avaliação</h6>
-                            <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                            <label for="cm_star-1"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                            <label for="cm_star-2"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                            <label for="cm_star-3"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                            <label for="cm_star-4"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                            <label for="cm_star-5"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-5" name="fb" value="5"/>
-
-                            <div id="hAtendimento">
-
-                                <h6>Horário de Atendimento</h6>
-                                <p>seg a sex das <%= inicio%> às <%= termino%></p>    
-                            </div>
-
-                        </div>
-
+                        </p>    
                     </div>
-                </div>              
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                            <div class="estrelas" id="avaliacao"> <h6>Avaliação</h6>
+                                <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                                <label for="cm_star-1"><i class="fa"></i></label>
+                                <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                                <label for="cm_star-2"><i class="fa"></i></label>
+                                <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                                <label for="cm_star-3"><i class="fa"></i></label>
+                                <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                                <label for="cm_star-4"><i class="fa"></i></label>
+                                <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                                <label for="cm_star-5"><i class="fa"></i></label>
+                                <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div id="hAtendimento">
+                                <h6>Horário de Atendimento</h6>
+                                <p>seg a sex das <%= inicio%> às <%= termino%></p> 
+                            </div>  
+                        </div>
+                    </div>
+                </div> 
             </div>
+
 
             <div id="tabs">
                 <ul>
@@ -105,64 +101,73 @@
 
                 </ul>
                 <div id="tabs-1">
+
                     <div id="caixaPromocoes">
-
-                        <%
-                            List<Produto> lista = new ArrayList();
-                            ProdutoDAO.getProdutos(lista, id);
-                            for (int contador = 0; contador < lista.size(); contador++) {
-                                Produto produto = lista.get(contador);
-                        %>
-
-                        <div id="produto">
-                            <img src="../ImagemProduto/pote.JPEG" width="100px" height="100px" id="imagemProduto2">
-                            
-
-                                <p id="descricaoProduto2">
-
-                                    <%= produto.getDescricao()%> 
-
+                        <div class="row">
+                            <%
+                                List<Produto> lista = new ArrayList();
+                                ProdutoDAO.getProdutos(lista, id);
+                                for (int contador = 0; contador < lista.size(); contador++) {
+                                    Produto produto = lista.get(contador);
+                            %>
+                            <div class="col-md-6 col-sm-12">
+                                <div id="produto">
+                                    <img src="../ImagemProduto/pote.JPEG" width="100px" height="100px" id="imagemProduto2">
+                                    <p> 
+                                        <%= produto.getNome()%>
+                                    </p>
+                                    <label id="descricaoProduto2">
+                                        <%= produto.getDescricao()%>                                     
+                                    </label>
+                                    <strong>R$<%= produto.getPreco()%>.</strong>
                                     <a href="url" id="adcCarrinho">Adicionar ao carrinho</a><br>
-                                </p>
-                                <strong>R$<%= produto.getPreco()%>.</strong>
-
+                                </div>
+                            </div>
+                            <% }%>
                         </div>
-                        <% }%>
                     </div>
 
-                    <a href="MeusProdutos.jsp" id="link" >Acessar página de produtos</a>    
+                    <a href="MeusProdutos.jsp" id="link">Acessar página de produtos</a>    
                 </div>
 
                 <div id="tabs-2">
 
-                    <div id="caixaServicos">                        
-                        <div id="bordaProduto2">
-                            <div id="nomeServico">Nome Serviço</div>
-                            <p id="descricaoServicos">
-                                Descrição do serviço
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            </p>
-                            <div id="valorServico">R$50</div>
-                            <a href="url" id="linkHorario">Ver horários de agendamento</a> 
+                    <div id="caixaServicos"> 
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div id="servico">
+                                    <p id="nomeServico">Nome Serviço</p>
+                                    <label id="descricaoServicos">
+                                        Descricao do serviço é aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    </label>
+                                    <div id="valorServico">R$50</div>                                    
+                                    <a href="url" id="linkHorario">Ver horários de agendamento</a> 
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-sm-12">
+                                <div id="servico">
+                                    <p id="nomeServico">Nome Serviço</p>
+                                    <label id="descricaoServicos">
+                                        Descricao do serviço é bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                                    </label>
+                                    <div id="valorServico">R$50</div>                                    
+                                    <a href="url" id="linkHorario">Ver horários de agendamento</a> 
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
                         </div>
-                        <div id="bordaProduto2">
-                            <div id="nomeServico">Nome Serviço</div>
-                            <p id="descricaoServicos">
-                                Descrição do serviço
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            </p>
-                            <div id="valorServico">R$50</div>
-                            <a href="url" id="linkHorario">Ver horários de agendamento</a> 
-                        </div>
-                        
+
                     </div>
-                       
+
                 </div>
             </div>
 

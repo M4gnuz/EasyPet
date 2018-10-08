@@ -130,10 +130,24 @@
 
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-        window.onload = function(){
-            <%if(status.equals("OK")){ %>
-                    alert("Cadastrado com Sucesso");
-                    <%}%>
+        window.onload = function () {
+        <% if (status != null) {%>
+            if (window.addEventListener) {
+                window.addEventListener('load', validaAlert());
+            } else {
+                window.attachEvent('onload', validaAlert());
+            }
+            function validaAlert() {
+
+        <%if (status.equals("OK")) { %>
+                alert("Cadastrado com Sucesso");
+        <%}%>
+        <%if (status.equals("password")) { %>
+                alert("Email de recuperação enviado com sucesso.");
+        <%}%>
+            }
+            ;
+        <%}%>
         };
     </script>
     

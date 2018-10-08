@@ -5,7 +5,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastro Produto Alímenticio</title>
+        <title>Cadastro Serviços</title>
         <link rel="stylesheet" type="text/css" href="../css/cadastroServico.css">
         <link rel="stylesheet" href="../Source Files/jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" href="../css/cabecalho.css"> 
@@ -38,7 +38,7 @@
         </div>
         <div class="container">
 
-            <div id="logocentral" class="principal2 col-xs-12 col-sm-8 col-md-8">
+            <div id="logocentral" class="principal2 col-xs-12 col-sm-7 col-md-7">
                 <h1 id="nomeTopo"> Tipo de Serviços </h1>
             </div>
 

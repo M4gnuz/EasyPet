@@ -27,11 +27,12 @@
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         </div>
                     </div>
-                    <div class="card" id="cardProduto">
+
+                    <div class="card" id="cardPets">
                         <div class="card-header" id="headingTwo">
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Produtos
+                                    Pets
                                 </button>
                             </h5>
                         </div>
@@ -39,16 +40,10 @@
                             <div class="card-body">
                                 <ul>
                                     <li>
-                                        <a id="click" link href="#">Novo Produto Alimentício </a>
+                                        <a id="click" link href="CadastrarPet.jsp">Novo Pet </a>
                                     </li>
                                     <li>
-                                        <a id="click" link href="#">Novo  Produto Diversos </a>
-                                    </li>
-                                    <li>
-                                        <a link href="#"> Gerenciar Produtos</a>
-                                    </li>
-                                    <li>
-                                        <a link href="#"> Categorias</a>
+                                        <a link href="MeusPets.jsp"> Meus Pets</a>
                                     </li>
                                 </ul>
                             </div>
@@ -64,18 +59,18 @@
                         </div>
                     </div>
                     <div class="card" id="cardPedido">
-                        <div class="card-header" id="headingThree">
+                        <div class="card-header" id="headingFour">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     Pedidos
                                 </button>
                             </h5>
                         </div>
                     </div>
                     <div class="card" id="cardAval">
-                        <div class="card-header" id="headingThree">
+                        <div class="card-header" id="headingFive">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                     Avaliações
                                 </button>
                             </h5>
@@ -83,12 +78,24 @@
 
                     </div>
                     <div class="card" id="cardconfig">
-                        <div class="card-header" id="headingThree">
+                        <div class="card-header" id="headingSix">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                     Configurações
                                 </button>
                             </h5>
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        <a id="click" link href="MeusDadosCliente.jsp">Alterar Dados </a>
+                                    </li>
+                                    <li>
+                                        <a id="click" link href="TrocaSenha.jsp">Trocar Senha</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                     </div>

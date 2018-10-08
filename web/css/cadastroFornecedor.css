@@ -17,6 +17,13 @@
 .btn2 {    
     margin-bottom: 10px;
 }
+#cadastrar{
+    
+ 
+    background-color: rgb(226, 226, 226);
+    padding: 2% 2% 2% 2%;
+    border-radius: 2%;
+}
 
 #cancelarCadFornecedor{
     margin-right: 43px!important;

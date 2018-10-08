@@ -1,0 +1,52 @@
+
+h1{
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    margin-left: 0%;
+    font-size: 14px;
+    padding-top: 15px;
+}
+
+textarea.form-control {
+    height: auto;
+    margin-bottom: 2%;
+}
+
+#tudo {
+    background-color: rgb(226, 226, 226);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#resumoValor{
+    border-radius: 5px;
+}
+
+.paginaCarrinho table thead tr{
+    background: darkblue; 
+     background: #cf9bcc!important;
+    color: white;
+}
+
+.paginaCarrinho #conteudoCarrinho{
+    margin-top: 35px;
+}
+
+.paginaCarrinho #paginaProdutos{
+background-color: #4950574a!important;
+    margin-right: 40px;
+    color: white;
+}
+
+.paginaCarrinho #finalizar{
+    margin-right: 40px;
+    background-color: #39b54a!important;
+    border: 1px solid green!important;
+}
+
+

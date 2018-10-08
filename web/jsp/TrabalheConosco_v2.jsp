@@ -1,6 +1,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<% String status = request.getParameter("status");%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -83,6 +85,24 @@
             </div>
         </div>
         <script type="text/javascript" src="../js/TrabalheConosco.js" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            <% if (status != null) {%>
+            if (window.addEventListener) {
+                window.addEventListener('load', validaAlert());
+            } else {
+                window.attachEvent('onload', validaAlert());
+            }
+            function validaAlert() {
+
+            <% if (status.equals("OK")) { %>
+                alert("Email enviado com sucesso.\nAgradecemos o contato.");
+            <%}%>
+           
+            }
+            ;
+            <%}%>
+            
+        </script>
         <%@include file="rodape.jsp"%>
     </body>
 </html>

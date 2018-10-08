@@ -81,9 +81,13 @@
             alert("Dados Cadastrados com Sucesso!\nFavor inserir imagem para completar o cadastro.");
             <%}%>
             <%}%>
-                document.getElementById("").onclick= function(){
+                document.getElementById("enviarImagem").onclick= function(){
+                    if(document.getElementById("target").src==window.location.href){
+                        alert("Selecione uma imagem!!");
+                    }else{
                     window.location.href ="../Controle?action=delForn&id=<%=id%>";
-                };
+                }};
+                
         </script>
     </body>
 </html>

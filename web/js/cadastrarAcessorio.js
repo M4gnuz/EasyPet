@@ -1,5 +1,4 @@
 window.onload = function () {
-<<<<<<< HEAD
 
 
     $(function () {
@@ -28,35 +27,10 @@ $(function () {
 
 
 };
-=======
-    
-$(function() {
-  var maxLength = '-0.000.000,00'.length;
-  
-  $("#inputPrecoA").maskMoney({
-    allowNegative: true,
-    thousands: '.',
-    decimal: ',',
-    affixesStay: false
-  }).attr('maxlength', maxLength).trigger('mask.maskMoney');
-});
-
-//$(function () {
-//    $("#anunciar_acessorio").click(function () {
-//        if (validaCampo() == true) {
-//            $("#formulario").submit();
-//        }
-//    });
-//});
-  
-    
-}   
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 
 function validaCampo() {
 
     //Valida campos em branco
-<<<<<<< HEAD
     if ($("#inputTitulo").val() === "") {
         alert("Por favor, preencher o campo título do produto");
         $("#inputTitulo").css("border", "1px solid red");
@@ -110,63 +84,4 @@ function validaCampo() {
     return true;
 }
 
-=======
-    if ($("#inputTitulo").val() == "") {
-        alert("Por favor, preencher o campo título do produto");
-        $("#inputTitulo").css("border", "1px solid red");
-        $("#inputTitulo").focus();
-        return false
-    }
-    
-    $("#inputTitulo").css("border", "1px solid #ced4da");
-    
-        if ($("#txtIngredientes").val() == "") {
-        alert("Por favor, preencher o campo ingredientes");
-        $("#txtIngredientes").css("border", "1px solid red");
-        $("#txtIngredientes").focus();
-        return false
-    }
-    
-    $("#txtIngredientes").css("border", "1px solid #ced4da");
-    
-        if ($("#inputPrecoA").val() == "") {
-        alert("Por favor, preencher o campo preço");
-        $("#inputPrecoA").css("border", "1px solid red");
-        $("#inputPrecoA").focus();
-        return false
-    }
-    
-    $("#inputPrecoA").css("border", "1px solid #ced4da");
-    
-        if ($("#inputEstoqueA").val() == "") {
-        alert("Por favor, preencher o campo estoque");
-        $("#inputEstoqueA").css("border", "1px solid red");
-        $("#inputEstoqueA").focus();
-        return false
-    }
-    
-    $("#inputEstoqueA").css("border", "1px solid #ced4da");
-    
-        if ($("#inputDataV").val() == "") {
-        alert("Por favor, preencher o campo título do data do vencimento");
-        $("#inputDataV").css("border", "1px solid red");
-        $("#inputDataV").focus();
-        return false
-    }
-    
-    $("#inputDataV").css("border", "1px solid #ced4da");
-    
-        if ($("#inputGroupSelect02").val() == "") {
-        alert("Por favor, selecione uma categoria");
-        $("#inputGroupSelect02").css("border", "1px solid red");
-        $("#inputGroupSelect02").focus();
-        return false
-    }
-    
-    $("#inputGroupSelect02").css("border", "1px solid #ced4da");
-    
-    return true;
-}    
-    
->>>>>>> 9a217dd5f652236bed4f816ad4f46ac4643cccab
 

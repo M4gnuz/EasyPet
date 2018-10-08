@@ -39,7 +39,7 @@ public class RecuperarSenhaServlet extends HttpServlet {
             String email = request.getParameter("emailR");
             String senha = ClienteDAO.recuperarSenha(email);
             JavaMailApp.enviarEmail(email, senha);
-            response.sendRedirect("index.html");   
+           response.sendRedirect("index.jsp?status=password");     
         }
     }
 
